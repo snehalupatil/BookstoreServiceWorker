@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0% 0% 0% 14%;
+  height: 55%;
+}
+.box_email {
+  margin: 0%;
+}
+.box_password {
+  margin-top: -1%;
+  margin-bottom: 0%;
+}
+.box_FP {
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+.boxwidth {
+  width: 83%;
+  margin-top: -1%;
+}
+.forgetPassword {
+  display: flex;
+  width: 83%;
+  justify-content: flex-end;
+  margin-top: -20px;
+}
+.button {
+  width: 85%;
+  background-color: #b71c1c;
+}
+.textor {
+  width: 83%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+.alternateButton {
+  display: flex;
+  justify-content: space-around;
+  width: 83%;
+}

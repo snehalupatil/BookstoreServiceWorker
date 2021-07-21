@@ -1,0 +1,46 @@
+<form [formGroup]="form" class="container" (ngSubmit)="submit()">
+  <h4 class="text">Full Name</h4>
+  <mat-form-field appearance="outline" class="boxwidth">
+    <input matInput formControlName="fullName" />
+    <mat-error *ngIf="form.controls.fullName.errors"
+      >*Enter Full Name</mat-error
+    >
+  </mat-form-field>
+
+  <h4 class="textP">Email Id</h4>
+  <mat-form-field appearance="outline" class="boxwidth">
+    <input matInput formControlName="email" />
+    <mat-error *ngIf="form.controls.email.errors">*Enter Email</mat-error>
+  </mat-form-field>
+
+  <h4 class="textP">Password</h4>
+  <mat-form-field appearance="outline" class="boxwidth">
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      formControlName="password"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <mat-error *ngIf="form.controls.password.errors">*Enter Password</mat-error>
+  </mat-form-field>
+
+  <h4 class="textP">Mobile Number</h4>
+  <mat-form-field appearance="outline" class="boxwidth">
+    <input matInput formControlName="number" />
+    <mat-error *ngIf="form.controls.number.errors"
+      >*Enter Mobile Number</mat-error
+    >
+  </mat-form-field>
+
+  <div class="button">
+    <button type="submit" class="button" mat-flat-button>Signup</button>
+  </div>
+</form>
