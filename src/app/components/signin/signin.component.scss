@@ -41,3 +41,19 @@
   justify-content: space-around;
   width: 83%;
 }
+
+@media (max-width: 1270px) {
+  .container {
+    width: 10%;
+    min-width: 150px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 10px;
+    height: 68px;
+  }
+  .button {
+    width: 100%;
+  }
+}

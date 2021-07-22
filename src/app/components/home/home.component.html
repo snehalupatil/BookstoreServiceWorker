@@ -1,12 +1,19 @@
-<div class="flexrow">
-  <mat-card *ngFor="let book of books" class="grid-item">
-    <mat-card-content class="detail">
-      <h3>
-        {{ book.bookName }}
-      </h3>
-      <h5>by {{ book.author }}</h5>
-
-      <h3>Rs {{ book.price }}</h3>
-    </mat-card-content>
-  </mat-card>
+<div class="display">
+  <div class="card" *ngFor="let book of books">
+    <div class="card__header">
+      <img
+        class="book-img"
+        src="./../../../assets/BookImages/Image 11.png"
+        alt="{{ book.title }}"
+      />
+      <!-- <h4>{{ book.description }}</h4> -->
+    </div>
+    <div class="card__contents">
+      <div class="contents__title">{{ book.description }}</div>
+      <h5>By {{ book.author }}</h5>
+      <div class="content__price">
+        <h3>Rs.{{ book.price }}</h3>
+      </div>
+    </div>
+  </div>
 </div>

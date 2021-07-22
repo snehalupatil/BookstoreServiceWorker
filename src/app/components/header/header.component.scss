@@ -1,5 +1,6 @@
 .container {
   background-color: #a03037;
+  width: 100%;
 }
 
 .header_left {
@@ -51,4 +52,27 @@
   margin-left: 8%;
   padding-top: 15px;
   color: #fcfcfc;
+}
+
+@media (max-width: 1270px) {
+  .container {
+    width: 100%;
+    min-width: 50px;
+  }
+
+  .header_left {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 10px;
+    height: 68px;
+  }
+  .button {
+    width: 100%;
+  }
 }

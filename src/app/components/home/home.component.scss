@@ -1,0 +1,39 @@
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 100px 0px 0px 0px;
+}
+
+.book-img {
+  height: 135px;
+  width: 100px;
+}
+
+.card {
+  height: 280px;
+  width: 200px;
+  box-shadow: 0px 0px 3px 0px rgb(236, 233, 233);
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card__header {
+  padding: 0 50px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  height: 52%;
+  background-color: #f5f5f5;
+}
+
+.card__contents {
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contents__title {
+  font-weight: bold;
+}
