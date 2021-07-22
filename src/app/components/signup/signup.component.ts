@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/service/user-service.service';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,6 +12,7 @@ export class SignupComponent implements OnInit {
   hide = true;
   constructor( private service: UserServiceService ) { }
 
+  
   form = new FormGroup({
     fullName: new FormControl('', [Validators.required, Validators.minLength(1)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/service/user-service.service';
 @Component({
   selector: 'app-signin',
@@ -9,7 +10,7 @@ import { UserServiceService } from 'src/app/service/user-service.service';
 export class SigninComponent implements OnInit {
 
 hide = true;
-  constructor( private service: UserServiceService ) { }
+  constructor( private service: UserServiceService, private router: Router ) { }
   
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
@@ -34,6 +35,7 @@ hide = true;
         localStorage.setItem("fullName", data["fullName"]);
         localStorage.setItem("email", data["email"]);
         localStorage.setItem("token", data["id"]);
+        this.router.navigate(['/dashboard']);
       });
     }
   }
