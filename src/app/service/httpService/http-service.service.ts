@@ -13,4 +13,11 @@ export class HttpServiceService {
     let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
     return this.httpClient.post(url, data, isHeaderRequired && tokenOption)
   }
+
+  get(url: string, isHeaderRequired: any = false, token: any = null) {
+    console.log( "Data");
+    let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
+    return this.httpClient.get(url, isHeaderRequired && tokenOption)
+  }
+  
 }

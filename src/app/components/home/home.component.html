@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="flexrow">
+  <mat-card *ngFor="let book of books" class="grid-item">
+    <mat-card-content class="detail">
+      <h3>
+        {{ book.bookName }}
+      </h3>
+      <h5>by {{ book.author }}</h5>
+
+      <h3>Rs {{ book.price }}</h3>
+    </mat-card-content>
+  </mat-card>
+</div>
