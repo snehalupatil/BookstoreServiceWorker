@@ -1,11 +1,12 @@
 <div class="display">
   <div class="book" *ngFor="let book of books">
-    <div class="book__header">
+    <div class="book__header" (click)="bookDetails(book)">
       <img class="book-img" src="./../../../assets/BookImages/Image 11.png" />
       <!-- <h4>{{ book.description }}</h4> -->
     </div>
     <div class="book__contents">
       <div class="book__title">{{ book.bookName }}</div>
+
       <h5>By {{ book.author }}</h5>
       <div class="book__details">
         <div class="rating">
@@ -15,6 +16,7 @@
         <h5 class="book_quantity">({{ book.quantity }})</h5>
 
         <h3 class="book_price">Rs.{{ book.price }}</h3>
+        <div class="view">QUICK VIEW</div>
       </div>
     </div>
   </div>
