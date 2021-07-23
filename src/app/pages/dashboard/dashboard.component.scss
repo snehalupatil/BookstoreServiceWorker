@@ -1,3 +1,26 @@
 .main {
   margin: 0px 150px 0px 150px;
 }
+
+.sub-header {
+  width: 72.2%;
+  margin: 0px 0px 0px 0px;
+  margin-top: 30px;
+  margin-left: 210px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.book_count {
+  margin-left: -759px;
+}
+
+.sub-header select {
+  padding: 5px 10px;
+  outline: none;
+}
+
+.sub-header select option {
+  border: none;
+}

@@ -20,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddressComponent } from './components/address/address.component';
+import { BookComponent } from './components/book/book.component';
 
 
 
@@ -34,6 +35,7 @@ import { AddressComponent } from './components/address/address.component';
     HomeComponent,
     FooterComponent,
     AddressComponent,
+    BookComponent,
     
   ],
   imports: [

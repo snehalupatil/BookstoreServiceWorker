@@ -1,12 +1,24 @@
 <div class="container">
-  <!-- HEADER -->
-  <app-header></app-header>
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="sub-header">
+    <h3 style="font-weight: bold">Books</h3>
+    <h5 class="book_count">(18 Items)</h5>
+    <ng-template #addBook>
+      <div (click)="openDialog()"></div>
+    </ng-template>
 
-  <!-- Main Content -->
+    <select style="font-weight: bold">
+      <option value="RELEVANCE">Sort by relevance</option>
+      <option value="PRICE_DESC">Price: High to Low</option>
+      <option value="PRICE_ASC">Price: Low to High</option>
+      <option value="DESC">Newest Arrival</option>
+    </select>
+  </div>
+
   <div class="main">
     <app-home></app-home>
   </div>
-
-  <!-- FOOTER -->
   <app-footer></app-footer>
 </div>
