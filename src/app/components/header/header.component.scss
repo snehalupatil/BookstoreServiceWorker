@@ -44,6 +44,7 @@
   margin-left: 230px;
   padding-top: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .header_right_cart {
@@ -53,6 +54,32 @@
   margin-left: 4%;
   padding-top: 15px;
   color: #fcfcfc;
+}
+
+.profile_dropdown {
+  height: 170px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.description {
+  margin-top: -15px;
+}
+
+.logout_button {
+  background-color: white;
+  padding: 10px 10px 10px 70px;
+}
+
+.line {
+  margin-top: -5px;
+}
+
+.myorders {
+  margin-top: -10px;
+}
+
+.wishlist {
+  margin-top: -20px;
 }
 
 @media (max-width: 1270px) {

@@ -1,5 +1,53 @@
 <app-header></app-header>
 
+<div class="row">
+  <div class="container">
+    <div>
+      <img src="./../../../assets/BookImages/Image 11.png" />
+    </div>
+    <div class="tags">
+      <button type="button">ADD TO BAG</button>
+      <button type="button">WISHLIST</button>
+    </div>
+  </div>
+  <div>
+    <div class="card-body" style="background-color: white">
+      <h5>{{ book.bookName }}</h5>
+      <h6>{{ book.author }}</h6>
+      <div class="row px-3">
+        <div class="rating">4.5 &#9733;</div>
+        <div>
+          <h6>{{ book.quantity }}</h6>
+        </div>
+      </div>
+
+      <div class="px-3">
+        <s>Rs.{{ book.price }}</s>
+      </div>
+
+      <hr />
+      <div>
+        <li>Book Details</li>
+        <p>
+          Angular is a TypeScript-based open-source front-end platform that
+          makes it easy to build applications with in web/mobile/desktop. The
+          major features of this framework such as declarative templates,
+          dependency injection, end to end tooling, and many more other features
+          are used to ease the development.
+        </p>
+      </div>
+      <hr />
+      <h5>Customer Feedback</h5>
+      <div class="feedback">
+        <h6 class="ml-4 pt-4">Overall Rating</h6>
+        <div class="stars"></div>
+
+        <button type="button" style="float: right">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="footer">
   <app-footer></app-footer>
 </div>

@@ -14,4 +14,6 @@ export class BookServiceService {
   getAllBooks=()=> {
     return this.httpService.get(`${this.url}bookstore_user/get/book`)
   }
+
+  
 }

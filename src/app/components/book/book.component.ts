@@ -1,6 +1,7 @@
 
 import { Input, EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 
 
 @Component({
@@ -12,10 +13,19 @@ export class BookComponent implements OnInit {
 
   
 
-  constructor() { }
-  books: Array<any> = []; 
+  constructor( private bookService: BookServiceService ) { }
+  book: any
   ngOnInit(): void {
   }
 
   
-}
+
+  getCartItems(){
+
+  }
+  
+  review() {
+    return Math.floor(Math.random() * (5 - 1) + 1)
+  }
+  
+  }

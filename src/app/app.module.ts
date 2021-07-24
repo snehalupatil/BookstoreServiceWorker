@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu'
 
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -49,7 +50,8 @@ import { BookComponent } from './components/book/book.component';
     MatDividerModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
 
   ],
   providers: [],
