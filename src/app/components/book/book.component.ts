@@ -1,7 +1,5 @@
-
-import { Input, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 
 
 @Component({
@@ -10,22 +8,28 @@ import { BookServiceService } from 'src/app/service/bookService/book-service.ser
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+  data: any;
+  // starRating = 0;
 
-  
+  rating5:Number=5;
+  rating4:Number=4;
+  rating3:Number=3;
+  rating2:Number=2;
+  rating1:Number=1;
 
-  constructor( private bookService: BookServiceService ) { }
-  book: any
+  constructor( private router: Router ) { 
+    this.data = this.router.getCurrentNavigation()?.extras.state;
+    (this.data)
+  }
+
+ 
+
   ngOnInit(): void {
+    this.getData()
   }
 
-  
-
-  getCartItems(){
-
+  getData = () =>{
+    this.data = this.data['details']
   }
-  
-  review() {
-    return Math.floor(Math.random() * (5 - 1) + 1)
-  }
-  
+ 
   }

@@ -1,6 +1,6 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="container">
     <div>
       <img src="./../../../assets/BookImages/Image 11.png" />
@@ -46,8 +46,173 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="footer">
-  <app-footer></app-footer>
+<div class="container">
+  <!-- HEADER -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="homeroute">home/Book</div>
+
+    <div class="content">
+      <div class="sidebook">
+        <img src="./../../../assets/BookImages/Image 1.png" />
+        <img src="./../../../assets/BookImages/Image 1.png" />
+      </div>
+
+      <div>
+        <div class="bookimage">
+          <img
+            class="largebook"
+            src="./../../../assets/BookImages/Image 11.png"
+          />
+        </div>
+        <div class="buttons">
+          <button
+            style="width: 47%; background-color: #a03037"
+            mat-flat-button
+            color="primary"
+          >
+            ADD TO BAG
+          </button>
+          <button
+            style="width: 47%; color: white; background-color: #333333"
+            mat-stroked-button
+          >
+            &hearts; WISHLIST
+          </button>
+        </div>
+      </div>
+
+      <div class="book_title">
+        <p class="description">{{ data.bookName }}</p>
+        <p class="author">by {{ data.author }}</p>
+        <div style="display: flex">
+          <div class="rate">
+            <p
+              style="
+                color: white;
+                margin: 0;
+                width: 20px;
+                height: 19px;
+                text-align: left;
+                font: normal normal bold 14px/19px Roboto;
+              "
+            >
+              4.5
+            </p>
+            <mat-icon class="star">grade</mat-icon>
+          </div>
+          <h5 class="quantity">({{ data.quantity }})</h5>
+        </div>
+        <p class="price">Rs. {{ data.price }}</p>
+
+        <mat-divider></mat-divider>
+
+        <div class="details">
+          <h4 class="heading">&#x25CF; Book Details</h4>
+          <div class="bookContent">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+            justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+            amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+            ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus estundefined
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div style="margin-top: 10px">
+          <h3>Customer Feedback</h3>
+          <div class="review">
+            <h5 class="text">Overall rating</h5>
+            <div class="star_rating">
+              <!-- <ngb-rating
+                [max]="5"
+                [(rate)]="starRating"
+                [readonly]="false"
+              ></ngb-rating> -->
+
+              <form action="">
+                <input
+                  class="star star-5"
+                  id="star-5"
+                  type="radio"
+                  name="star"
+                  [(ngModel)]="rating5"
+                />
+                <label class="star star-5" for="star-5"></label>
+                <input
+                  class="star star-4"
+                  id="star-4"
+                  type="radio"
+                  name="star"
+                />
+                <label class="star star-4" for="star-4"></label>
+                <input
+                  class="star star-3"
+                  id="star-3"
+                  type="radio"
+                  name="star"
+                />
+                <label class="star star-3" for="star-3"></label>
+                <input
+                  class="star star-2"
+                  id="star-2"
+                  type="radio"
+                  name="star"
+                />
+                <label class="star star-2" for="star-2"></label>
+                <input
+                  class="star star-1"
+                  id="star-1"
+                  type="radio"
+                  name="star"
+                />
+                <label class="star star-1" for="star-1"></label>
+              </form>
+            </div>
+            <input
+              class="searchInput"
+              type="text"
+              placeholder="Write your review"
+            />
+            <div>
+              <button type="submit" class="button" mat-flat-button color="warn">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

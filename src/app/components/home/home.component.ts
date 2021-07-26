@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   bookDetails(book:any){
       this.book = book
-      this.router.navigate(['/book'])
+      this.router.navigate(['/book'], { state : { details: book }})
   }
 
 }

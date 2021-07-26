@@ -10,29 +10,161 @@
   background-color: black;
 }
 
-.row {
-  margin-left: 295px;
+// .row {
+//   margin-left: 295px;
+//   margin-top: 40px;
+// }
+
+// .image {
+//   width: 180px;
+//   height: 255px;
+//   background-color: #f5f5f5;
+//   padding: 30px 30px 30px 30px;
+//   border-bottom: black;
+// }
+
+// .tags {
+//   width: 100%;
+// }
+
+// .add {
+//   background-color: #a03037;
+//   color: white;
+// }
+
+// .wish {
+//   background-color: #333333;
+//   color: white;
+// }
+
+.main {
+  padding-top: 20px;
+  height: 100%;
+  margin: 0px 253px 0px 213px;
+}
+
+.homeroute {
+  padding-bottom: 20px;
+}
+
+// .sidebook {
+//   padding: 20px 30px 20px 30px;
+// }
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.book_title {
+  padding: 0px 0px 0px 50px;
+}
+
+.bookimage {
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+}
+
+.largebook {
+  padding: 20px 30px 20px 30px;
+  width: 252px;
+  height: 360px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  font: normal normal normal 28px/37px Roboto;
+}
+
+.author {
+  font: normal normal normal 18px/24px Roboto;
+  color: #878787;
+}
+
+.rate {
+  width: 50px;
+  height: 25px;
+  background: #388e3c;
+  display: flex;
+  align-items: center;
+  padding-left: 3px;
+  justify-content: space-evenly;
+}
+
+.star {
+  color: white;
+  font-size: 11px;
+  width: 11px;
+  height: 11px;
+}
+
+.quantity {
+  font: normal normal normal 15px/20px Roboto;
+  color: #878787;
+  margin-left: 11px;
+}
+
+.price {
+  width: 120px;
+  font: normal normal bold 30px/30px Roboto;
+  color: #0a0102;
+  padding-top: 10px;
+}
+
+.details {
   margin-top: 40px;
+  margin-bottom: 40px;
+  width: 580px;
 }
 
-.image {
-  width: 180px;
-  height: 255px;
-  background-color: #f5f5f5;
-  padding: 30px 30px 30px 30px;
-  border-bottom: black;
+.heading {
+  margin: 0;
+  font: normal normal normal 15px/20px Roboto;
+  color: #878787;
 }
 
-.tags {
-  width: 100%;
+.bookContent {
+  height: 80px;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #3f3b3b;
+  opacity: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 15px;
 }
 
-.add {
-  background-color: #a03037;
-  color: white;
+.review {
+  background: #f5f5f5;
+  padding: 10px 20px 10px 20px;
 }
 
-.wish {
-  background-color: #333333;
-  color: white;
+ngb-rating {
+  color: #ffc107;
+  font-size: 80px;
+}
+
+.searchInput {
+  margin-top: 20px;
+
+  font: normal normal normal 15px/20px Roboto;
+
+  color: #707070;
+
+  outline: none;
+  border: transparent;
+}
+
+.button {
+  margin-top: 35px;
+  margin-left: 471px;
+  width: 76px;
+  height: 32px;
+  background: #3371b5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
 }
