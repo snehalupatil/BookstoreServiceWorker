@@ -20,7 +20,14 @@
       </mat-menu>
     </div>
     <div class="header_right_cart">
-      <mat-icon> shopping_cart</mat-icon>
+      <mat-icon
+        matBadge="1"
+        matBadgeColor="warn"
+        style="cursor: pointer"
+        (click)="redirectToCart()"
+      >
+        shopping_cart</mat-icon
+      >
       <h5>Cart</h5>
     </div>
   </div>

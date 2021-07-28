@@ -15,5 +15,10 @@ export class BookServiceService {
     return this.httpService.get(`${this.url}bookstore_user/get/book`)
   }
 
+  AddCart=(data:any)=>{
+    return this.httpService.post(`${this.url}/bookstore_user/add_cart_item/{product_id}`,data)
+  }
   
 }
+
+

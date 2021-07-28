@@ -31,4 +31,15 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/book'], { state : { details: book }})
   }
 
+  addcart(book: any){
+    book.addedToCart=false;
+    for(let b of this.books){
+      if(book.product_id==b.product_id){
+        book.addedToCart=true;
+      }
+    }
+  }
+    
+  
+
 }

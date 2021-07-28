@@ -12,6 +12,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu'
+import { MatRadioModule } from '@angular/material/radio';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatBadgeModule } from '@angular/material/badge';
+
 
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -22,6 +26,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddressComponent } from './components/address/address.component';
 import { BookComponent } from './components/book/book.component';
+import { CartComponent } from './components/cart/cart.component';
+
 
 
 
@@ -37,6 +43,8 @@ import { BookComponent } from './components/book/book.component';
     FooterComponent,
     AddressComponent,
     BookComponent,
+    CartComponent,
+    
     
   ],
   imports: [
@@ -51,7 +59,10 @@ import { BookComponent } from './components/book/book.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule,
+    MatPaginatorModule,
+    MatBadgeModule
 
   ],
   providers: [],

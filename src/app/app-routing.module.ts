@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BookComponent } from './components/book/book.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
     ]
   },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'book', component: BookComponent }
+  { path: 'book', component: BookComponent },
+  { path: 'cart', component:CartComponent }
 ];
 
 @NgModule({

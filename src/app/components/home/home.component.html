@@ -16,8 +16,29 @@
         <h5 class="book_quantity">({{ book.quantity }})</h5>
 
         <h3 class="book_price">Rs.{{ book.price }}</h3>
+        <!-- <div class="buttons">
+          <button
+            style="background-color: #a03037"
+            mat-flat-button
+            color="primary"
+            mat-raised-button
+            (click)="addcart(book)"
+          >
+            ADD TO BAG
+          </button>
+          *ngIf="book.addedToCart"
+
+          <button
+            style="color: white; background-color: #333333"
+            mat-stroked-button
+          >
+            &hearts; WISHLIST
+          </button>
+        </div> -->
         <div class="view">QUICK VIEW</div>
       </div>
     </div>
   </div>
+  <mat-paginator [length]="10" [pageSize]="2" [pageSizeOptions]="[1, 2]">
+  </mat-paginator>
 </div>

@@ -1,0 +1,132 @@
+<div class="container">
+  <app-header></app-header>
+
+  <div class="main">
+    <div style="background-color: #ffffff; height: 5%; padding-top: 14px">
+      Home/My cart
+    </div>
+    <div class="cart">
+      <div>
+        <h3>My Cart()</h3>
+        <div class="book">
+          <img src="./../../../assets/BookImages/Image 11.png" />
+          <div>
+            <p class="description">{{ data.bookName }}</p>
+            <p class="author">by {{ data.author }}</p>
+            <p class="price">Rs. {{ data.price }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="placeOrder">
+        <div class="location">
+          <div style="display: flex; align-items: flex-end">
+            <mat-icon> pin_drop</mat-icon> Use current location
+          </div>
+          <mat-icon>expand_more</mat-icon>
+        </div>
+        <div class="order" (click)="toggleShowAddress()">PLACE ORDER</div>
+        <!-- <button class="order" mat-button matStepperNext>PLACE ORDER</button> -->
+      </div>
+    </div>
+    <div class="address" *ngIf="!displayAddress">
+      <span>Address Details</span>
+    </div>
+
+    <div class="custermerAddress" *ngIf="displayAddress">
+      <div style="width: 75%">
+        <h2 class="details">Customer Details</h2>
+        <div style="display: flex; justify-content: space-between">
+          <div>
+            <h4 style="margin: 0px" class="textName">Full Name</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" />
+            </mat-form-field>
+          </div>
+          <div>
+            <h4 style="margin: 0px" class="textName">Mobile Number</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div style="margin-top: 20px">
+          <h4 style="margin: 0px" class="textName">Address</h4>
+          <mat-form-field appearance="outline" class="addressWidth">
+            <input matInput placeholder="" />
+          </mat-form-field>
+        </div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+          "
+        >
+          <div>
+            <h4 style="margin: 0px" class="textName">City/town</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" />
+            </mat-form-field>
+          </div>
+          <div>
+            <h4 style="margin: 0px" class="textName">State</h4>
+            <mat-form-field appearance="outline" class="placewidth">
+              <input matInput placeholder="" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin-top: 10px" class="textName">Type</h4>
+          <mat-radio-group>
+            <mat-radio-button class="example-margin" value="home"
+              >Home</mat-radio-button
+            >
+            <mat-radio-button class="example-margin" value="work"
+              >Work</mat-radio-button
+            >
+            <mat-radio-button class="example-margin" value="other"
+              >Other</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        "
+      >
+        <div class="newAddress">
+          <span style="color: #a03037; padding: 20px 0px 20px 19px"
+            >Add New Address</span
+          >
+        </div>
+        <div>
+          <div class="continue" (click)="toggleShowSummary()">CONTINUE</div>
+        </div>
+      </div>
+    </div>
+    <div class="address" *ngIf="!displaySummary">
+      <span>Order Summary</span>
+    </div>
+    <div class="summary" style="margin-top: 20px" *ngIf="displaySummary">
+      <div>
+        <h3>Order Summary</h3>
+        <div class="book">
+          <img src="./../../../assets/BookImages/Image 11.png" />
+          <div>
+            <p class="description">{{ data.bookName }}</p>
+            <p class="author">by {{ data.author }}</p>
+            <p class="price">Rs. {{ data.price }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="placeOrder">
+        <div class="order">CHECKOUT</div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <!-- <app-footer></app-footer> -->
+</div>
