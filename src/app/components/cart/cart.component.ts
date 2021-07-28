@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
 
   toggleShowAddress(){
     this.displayAddress = false
-    this.displaySummary = true
+     this.displaySummary = false
   }
 
   toggleShowSummary(){
