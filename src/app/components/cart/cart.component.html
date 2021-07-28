@@ -1,5 +1,5 @@
 <div class="container">
-  <app-header [cartBooks]="cartBooks"></app-header>
+  <app-header [carts]="carts"></app-header>
 
   <div class="main">
     <div style="background-color: #ffffff; height: 5%; padding-top: 14px">
@@ -10,13 +10,13 @@
     <div class="cart">
       <div>
         <h3>My Cart()</h3>
-        <ng-container *ngFor="let cartBook of cartBooks">
+        <ng-container *ngFor="let cart of carts">
           <div class="book" style="flex-direction: row">
             <img src="../../../assets/BookImages/Image 11.png" />
             <div style="margin-left: 20px">
-              <span>{{ cartBook.product_id.description }}</span>
+              <span>{{ cart.product_id.description }}</span>
               <h5 style="margin-bottom: 5px; color: #9d9d9d">
-                by {{ cartBook.product_id.author }}
+                by {{ cart.product_id.author }}
               </h5>
               <span
                 style="
@@ -25,11 +25,13 @@
                   color: #0a0102;
                   opacity: 1;
                 "
-                >Rs. {{ cartBook.product_id.price }}</span
+                >Rs. {{ cart.product_id.price }}</span
               >
             </div>
           </div>
-          <mat-divider></mat-divider>
+          <button mat-stroked-button (click)="removeCartItem(cart)">
+            remove
+          </button>
         </ng-container>
       </div>
 
@@ -40,6 +42,7 @@
           </div>
           <mat-icon>expand_more</mat-icon>
         </div>
+
         <div class="order" (click)="address()">PLACE ORDER</div>
       </div>
     </div>
@@ -131,14 +134,31 @@
     </div>
 
     <div class="book" *ngIf="!displayAddress">
-      <img src="../../../assets/BookImages/Image 11.png" />
-      <div>
-        <p>Books Description</p>
-        <h5>Book Author</h5>
-        <p>Price</p>
-      </div>
+      <ng-container *ngFor="let cart of carts">
+        <div class="book" style="flex-direction: row">
+          <img src="../../../assets/BookImages/Image 11.png" />
+          <div style="margin-left: 20px">
+            <span>{{ cart.product_id.description }}</span>
+            <h5 style="margin-bottom: 5px; color: #9d9d9d">
+              by {{ cart.product_id.author }}
+            </h5>
+            <span
+              style="
+                font: normal normal bold 15px/18px Lato;
+                letter-spacing: 0px;
+                color: #0a0102;
+                opacity: 1;
+              "
+              >Rs. {{ cart.product_id.price }}</span
+            >
+          </div>
+        </div>
+        <button mat-stroked-button (click)="removeCartItem(cart)">
+          remove
+        </button>
+      </ng-container>
     </div>
-  </div>
 
-  <!-- <app-footer></app-footer> -->
+    <!-- <app-footer></app-footer> -->
+  </div>
 </div>

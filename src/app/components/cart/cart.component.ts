@@ -15,14 +15,15 @@ export class CartComponent implements OnInit {
   
   labelPosition: 'before' | 'after' = 'after';
   
-  cartBooks: Array<any> = [];
+  carts: Array<any> = [];
 
   data: any;
 
   constructor(private router: Router, private bookService: BookServiceService){}
 
   ngOnInit(): void {  
-    this.getCarts();
+    this.getCartItems();
+    
   }
 
   token_Id = localStorage.getItem('token');
@@ -31,13 +32,23 @@ export class CartComponent implements OnInit {
     this.displayAddress = false
   }
 
-  getCarts(){
+  getCartItems(){
     this.bookService.getCartItems(this.token_Id).subscribe((data:any)=>{
-      this.cartBooks = data['result'];
-      console.log(this.cartBooks);
+      this.carts = data['result'];
+      console.log(this.carts);
 
     },(error)=>{
       console.log(error);
+    })
+  }
+
+  removeCartItem(data:any){
+    this.carts.splice(data,1);
+    this.bookService.removeCartItem(data,this.token_Id).subscribe((res:any)=>{
+      console.log("cart Item removed sucessfully",res);
+      this.getCartItems();
+      //this.bag=this.cartservice.getCartItems();
+      
     })
   }
   

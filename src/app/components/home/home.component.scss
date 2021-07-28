@@ -1,81 +1,94 @@
-.display {
+.displayBox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 10px 10px 0px 10px;
+  justify-content: flex-start;
 }
 
-.book-img {
-  height: 135px;
-  width: 100px;
-  margin-bottom: 5px;
+.productBody {
+  width: 235px;
+  height: 275px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  opacity: 1;
+  margin: 0px 0px 32px 38px;
   cursor: pointer;
 }
 
-.book {
-  height: 260px;
-  width: 210px;
-  box-shadow: 0px 0px 3px 0px rgb(236, 233, 233);
-  margin-bottom: 40px;
-  margin-left: 28px;
-  transition: all 30ms ease-in-out;
+.productBody:hover {
+  box-shadow: 2px 11px 5px 5px rgba(173, 170, 170, 0.8);
 }
 
-.book:hover {
-  box-shadow: 0px 0px 3px 5px rgb(236, 233, 233);
+.block {
+  height: 115px;
+  width: 233px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #e2e2e2;
+  border-radius: 0px 0px 3px 3px;
+  opacity: 1;
+  border-top: transparent;
 }
 
-.book__header {
-  padding: 0 50px;
-  padding-bottom: 0px;
-  padding-top: 15px;
-  background-color: #f5f5f5;
-}
-
-.book__contents {
-  padding-left: 35px;
+.bookImg {
+  width: 233px;
+  height: 172px;
+  background: #efefef 0% 0% no-repeat padding-box;
+  border: 1px solid #e2e2e2;
+  border-bottom: transparent;
+  border-radius: 2px 2px 0px 0px;
+  opacity: 1;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.book__title {
-  flex: 1;
+img {
+  width: 105px;
+  height: 135px;
+}
+
+.description {
+  padding: 5px 0px 0px 20px;
+  font: normal normal bold 12px/18px Roboto;
+  letter-spacing: 0px;
+  width: 190px;
+  color: #0a0102;
+  opacity: 1;
+  margin: 0;
   white-space: nowrap;
-  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.book__details {
-  padding-left: 1px;
-  margin-top: -5px;
+div.description:hover {
+  overflow: visible;
+}
+
+.author {
+  font: normal normal normal 10px/13px Roboto;
+  letter-spacing: 0px;
+  color: #727070;
+  opacity: 1;
+  padding-left: 20px;
+  margin-bottom: 7px;
+}
+
+.quantityAndRate {
+  padding-left: 20px;
+  margin-bottom: 5px;
   display: flex;
   height: 15px;
 }
 
-.buttons {
-  width: 10px;
-  height: 20px;
-  margin-top: 40px;
-  margin-left: -60px;
-
-  display: flex;
-  justify-content: space-between;
-}
-
-.rating {
+.rate {
   width: 33px;
   height: 16px;
-  background: #388e3c;
+  background: #388e3c 0% 0% no-repeat padding-box;
   border-radius: 1px;
-
+  opacity: 1;
   display: flex;
   align-items: baseline;
-  margin-bottom: 5px;
-}
-
-.book_quantity {
-  margin-left: 8px;
+  padding-left: 3px;
 }
 
 .star {
@@ -83,31 +96,69 @@
   font-size: 10px;
 }
 
-.book_price {
-  margin-top: 18px;
-  margin-left: -60px;
-  font-weight: bold;
+.price {
+  padding-left: 20px;
+  margin: 0;
+  width: 50px;
+  height: 16px;
+  text-align: left;
+  font: normal normal bold 12px/18px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
 }
 
 .view {
-  margin-top: -55px;
-  margin-left: -25px;
-  background-color: #333131;
+  position: relative;
+  right: -35%;
+  top: -110%;
+  background-color: #5f5e5e;
+  width: 65px;
   color: #ffffff;
-  height: 18px;
+  height: 16px;
   font-size: smaller;
   visibility: hidden;
+  padding: 0px 3px 2px 3px;
 }
 
-.book:hover .view {
+.productBody:hover .view {
   visibility: visible;
 }
 
 .alternateButton {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
-  margin-left: -80px;
-  width: 200%;
-  height: 35px;
+  width: 100%;
+  height: 28px;
+}
+
+.addCartButton {
+  width: 42%;
+  background-color: #a03037;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+}
+
+.addCartButton:hover {
+  box-shadow: 4px 2px 8px 3px rgba(173, 170, 170, 0.8);
+}
+
+.whishlist {
+  width: 42%;
+  color: white;
+  background-color: #414040;
+  border: 0;
+  cursor: pointer;
+}
+
+.whishlist:hover {
+  box-shadow: 2px 2px 5px 3px rgba(173, 170, 170, 0.8);
+}
+
+.addedCart {
+  width: 90%;
+  color: white;
+  background-color: #333333;
+  cursor: pointer;
 }

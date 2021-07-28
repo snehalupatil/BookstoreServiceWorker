@@ -1,41 +1,36 @@
-<div class="display">
-  <div class="book" *ngFor="let book of books">
-    <div class="book__header" (click)="bookDetails(book)">
-      <img class="book-img" src="./../../../assets/BookImages/Image 11.png" />
-      <!-- <h4>{{ book.description }}</h4> -->
-    </div>
-    <div class="book__contents">
-      <div class="book__title">{{ book.bookName }}</div>
-
-      <h5>By {{ book.author }}</h5>
-      <div class="book__details">
-        <div class="rating">
-          <p style="color: white; margin: 0">4.5</p>
-          <mat-icon class="star">grade</mat-icon>
+<div class="displayBox">
+  <ng-container *ngFor="let book of books">
+    <div class="productBody">
+      <div class="bookImg">
+        <img
+          (click)="bookDetails(book)"
+          class="img"
+          src="../../../assets/BookImages/Image 11.png"
+        />
+      </div>
+      <div class="block">
+        <h3 class="description">{{ book.bookName }}</h3>
+        <h5 class="author">by {{ book.author }}</h5>
+        <div class="quantityAndRate">
+          <div class="rate">
+            <p style="color: white; margin: 0">4.5</p>
+            <mat-icon class="star">grade</mat-icon>
+          </div>
+          <h5 style="color: #878787">({{ book.quantity }})</h5>
         </div>
-        <h5 class="book_quantity">({{ book.quantity }})</h5>
+        <h4 class="price">Rs. {{ book.price }}</h4>
 
-        <h3 class="book_price">Rs.{{ book.price }}</h3>
-        <div class="alternateButton" *ngIf="displayAddress">
-          <button
-            style="width: 42%; background-color: #a03037; color: #ffffff"
-            (click)="addtoCart(book)"
-          >
+        <div class="alternateButton" *ngIf="displayShow">
+          <button class="addCartButton" (click)="addtoCart(book)">
             ADD TO BAG
           </button>
-          <button style="width: 42%; color: white; background-color: #333333">
-            &#x2764; WISHLIST
-          </button>
+          <button class="whishlist">&#x2764; WISHLIST</button>
         </div>
-        <div class="alternateButton" *ngIf="!displayAddress">
-          <button style="width: 100%; color: white; background-color: #333333">
-            ADDED TO CART
-          </button>
+        <div class="alternateButton" *ngIf="!displayShow">
+          <button class="addedCart">ADDED TO CART</button>
         </div>
         <div class="view">QUICK VIEW</div>
       </div>
     </div>
-  </div>
-  <mat-paginator [length]="10" [pageSize]="2" [pageSizeOptions]="[1, 2]">
-  </mat-paginator>
+  </ng-container>
 </div>

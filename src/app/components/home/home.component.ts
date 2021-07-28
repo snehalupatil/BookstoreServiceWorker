@@ -10,7 +10,7 @@ import { BookServiceService } from 'src/app/service/bookService/book-service.ser
 
 export class HomeComponent implements OnInit {
 
-  displayAddress = true;
+  displayShow = true;
   book: any;
   bag: any;
  
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     },(error)=>{
       console.log(error);
     })
-  
+    this.displayShow = false
   }
 
   

@@ -25,6 +25,12 @@ export class BookServiceService {
     console.log(token)
     return this.httpService.get(`${this.url}bookstore_user/get_cart_items`, true, token);
   }
+
+  removeCartItem(data:any, token:any){
+    console.log("data in remove item",data);
+    // return this.httpService.post('Cart/RemoveCartItem?productId='+data,{});
+    return this.httpService.delete(`${this.url}bookstore_user/remove_cart_item/${data.id}`, { }, true, token)
+  }
 }
 
 
