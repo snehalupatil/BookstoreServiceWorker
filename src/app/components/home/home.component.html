@@ -16,25 +16,22 @@
         <h5 class="book_quantity">({{ book.quantity }})</h5>
 
         <h3 class="book_price">Rs.{{ book.price }}</h3>
-        <!-- <div class="buttons">
+        <div class="alternateButton" *ngIf="displayAddress">
           <button
-            style="background-color: #a03037"
-            mat-flat-button
-            color="primary"
-            mat-raised-button
-            (click)="addcart(book)"
+            style="width: 42%; background-color: #a03037; color: #ffffff"
+            (click)="addtoCart(book)"
           >
             ADD TO BAG
           </button>
-          *ngIf="book.addedToCart"
-
-          <button
-            style="color: white; background-color: #333333"
-            mat-stroked-button
-          >
-            &hearts; WISHLIST
+          <button style="width: 42%; color: white; background-color: #333333">
+            &#x2764; WISHLIST
           </button>
-        </div> -->
+        </div>
+        <div class="alternateButton" *ngIf="!displayAddress">
+          <button style="width: 100%; color: white; background-color: #333333">
+            ADDED TO CART
+          </button>
+        </div>
         <div class="view">QUICK VIEW</div>
       </div>
     </div>

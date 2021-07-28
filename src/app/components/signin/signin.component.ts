@@ -34,7 +34,7 @@ hide = true;
 
         localStorage.setItem("fullName", data["fullName"]);
         localStorage.setItem("email", data["email"]);
-        localStorage.setItem("token", data["id"]);
+        localStorage.setItem("token", data.result.accessToken);
         this.router.navigate(['/dashboard']);
       });
     }

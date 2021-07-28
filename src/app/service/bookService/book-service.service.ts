@@ -15,8 +15,11 @@ export class BookServiceService {
     return this.httpService.get(`${this.url}bookstore_user/get/book`)
   }
 
-  AddCart=(data:any)=>{
-    return this.httpService.post(`${this.url}/bookstore_user/add_cart_item/{product_id}`,data)
+  addCart=(data:any, token:any)=>{
+    // return this.httpService.post(`${this.url}bookstore_user/add_cart_item/{product_id}`,data, true)
+    console.log(data);
+    return this.httpService.post(`${this.url}bookstore_user/add_cart_item/${data.id}`, { }, true,token)
+  
   }
   
 }

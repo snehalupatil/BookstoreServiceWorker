@@ -9,7 +9,10 @@ import { BookServiceService } from 'src/app/service/bookService/book-service.ser
 })
 
 export class HomeComponent implements OnInit {
+
+  displayAddress = true;
   book: any;
+ 
 
   constructor( private bookService: BookServiceService, private router: Router) { }
   books: Array<any> = [];
@@ -17,6 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getBooks();
   }
+
+  token_Id = localStorage.getItem('token');
 
   getBooks(){
     this.bookService.getAllBooks().subscribe((data:any) => {
@@ -31,15 +36,20 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/book'], { state : { details: book }})
   }
 
-  addcart(book: any){
-    book.addedToCart=false;
-    for(let b of this.books){
-      if(book.product_id==b.product_id){
-        book.addedToCart=true;
-      }
+  addtoCart(cart: any){
+    console.log(cart)
+    let data = {
+    "id": cart._id,
+    "token": this.token_Id
     }
+    this.bookService.addCart(data, this.token_Id).subscribe((responce:any) => {
+      console.log(responce)
+
+    },(error)=>{
+      console.log(error);
+    })
+   
   }
-    
-  
 
 }
+    
