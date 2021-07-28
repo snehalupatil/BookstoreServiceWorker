@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   displayAddress = true;
   book: any;
+  bag: any;
  
 
   constructor( private bookService: BookServiceService, private router: Router) { }
@@ -42,14 +43,18 @@ export class HomeComponent implements OnInit {
     "id": cart._id,
     "token": this.token_Id
     }
-    this.bookService.addCart(data, this.token_Id).subscribe((responce:any) => {
-      console.log(responce)
+    this.bookService.addCart(data, this.token_Id).subscribe((response:any) => {
+      console.log(response)
 
     },(error)=>{
       console.log(error);
     })
-   
+  
   }
 
+  
 }
+
+
+
     

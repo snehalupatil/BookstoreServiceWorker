@@ -1,3 +1,4 @@
+import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,25 +15,31 @@ export class CartComponent implements OnInit {
   
   labelPosition: 'before' | 'after' = 'after';
   
+  cartBooks: Array<any> = [];
+
   data: any;
 
-  constructor(private router: Router){
-    this.data = this.router.getCurrentNavigation()?.extras.state;
-    (this.data)
+  constructor(private router: Router, private bookService: BookServiceService){}
+
+  ngOnInit(): void {  
+    this.getCarts();
   }
 
-  ngOnInit(): void {
-    this.getData()
-  }
-
-  getData = () =>{
-    this.data = this.data['details']
-  }
-
-  
+  token_Id = localStorage.getItem('token');
 
   address(){
     this.displayAddress = false
   }
+
+  getCarts(){
+    this.bookService.getCartItems(this.token_Id).subscribe((data:any)=>{
+      this.cartBooks = data['result'];
+      console.log(this.cartBooks);
+
+    },(error)=>{
+      console.log(error);
+    })
+  }
+  
 }
 

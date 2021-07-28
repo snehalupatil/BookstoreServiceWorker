@@ -19,9 +19,12 @@ export class BookServiceService {
     // return this.httpService.post(`${this.url}bookstore_user/add_cart_item/{product_id}`,data, true)
     console.log(data);
     return this.httpService.post(`${this.url}bookstore_user/add_cart_item/${data.id}`, { }, true,token)
-  
   }
   
+  getCartItems(token:any){
+    console.log(token)
+    return this.httpService.get(`${this.url}bookstore_user/get_cart_items`, true, token);
+  }
 }
 
 

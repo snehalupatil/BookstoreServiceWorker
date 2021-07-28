@@ -19,11 +19,11 @@
         </div>
       </mat-menu>
     </div>
-    <div class="header_right_cart">
+    <div class="header_right_cart" style="cursor: pointer">
       <mat-icon
-        matBadge="1"
-        matBadgeColor="warn"
-        style="cursor: pointer"
+        [matBadge]="badgeContent"
+        matBadgeSize="small"
+        class="headerButton"
         (click)="redirectToCart()"
       >
         shopping_cart</mat-icon

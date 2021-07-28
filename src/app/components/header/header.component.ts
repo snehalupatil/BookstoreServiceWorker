@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   
+  @Input() cartBooks:any;
+  badgeContent: number | undefined;
+
 
   constructor( private router: Router ) { }
 
@@ -19,7 +22,6 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/cart']);
   }
 
-  
 
   logout() {
     localStorage.clear();

@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TokenType } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 @Injectable({
