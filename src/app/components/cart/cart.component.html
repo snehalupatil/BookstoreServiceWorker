@@ -5,15 +5,16 @@
     <div style="background-color: #ffffff; height: 5%; padding-top: 14px">
       Home/My cart
     </div>
+    <!-- Books details -->
     <div class="cart">
       <div>
         <h3>My Cart()</h3>
         <div class="book">
-          <img src="./../../../assets/BookImages/Image 11.png" />
+          <img src="../../../assets/BookImages/Image 11.png" />
           <div>
-            <p class="description">{{ data.bookName }}</p>
-            <p class="author">by {{ data.author }}</p>
-            <p class="price">Rs. {{ data.price }}</p>
+            <p>Books Description</p>
+            <h5>Book Author</h5>
+            <p>Price</p>
           </div>
         </div>
       </div>
@@ -24,15 +25,16 @@
           </div>
           <mat-icon>expand_more</mat-icon>
         </div>
-        <div class="order" (click)="toggleShowAddress()">PLACE ORDER</div>
-        <!-- <button class="order" mat-button matStepperNext>PLACE ORDER</button> -->
+        <div class="order" (click)="address()">PLACE ORDER</div>
       </div>
     </div>
-    <div class="address" *ngIf="!displayAddress">
+
+    <!-- Address -->
+    <div class="address" *ngIf="displayAddress">
       <span>Address Details</span>
     </div>
 
-    <div class="custermerAddress" *ngIf="displayAddress">
+    <div class="custermerAddress" *ngIf="!displayAddress">
       <div style="width: 75%">
         <h2 class="details">Customer Details</h2>
         <div style="display: flex; justify-content: space-between">
@@ -77,7 +79,7 @@
         </div>
         <div>
           <h4 style="margin-top: 10px" class="textName">Type</h4>
-          <mat-radio-group>
+          <mat-radio-group [(ngModel)]="labelPosition">
             <mat-radio-button class="example-margin" value="home"
               >Home</mat-radio-button
             >
@@ -103,30 +105,25 @@
           >
         </div>
         <div>
-          <div class="continue" (click)="toggleShowSummary()">CONTINUE</div>
+          <div class="continue" (click)="address()">Continue</div>
         </div>
       </div>
     </div>
-    <div class="address" *ngIf="!displaySummary">
+
+    <!-- summary -->
+    <div class="address" *ngIf="displayAddress">
       <span>Order Summary</span>
     </div>
-    <div class="summary" style="margin-top: 20px" *ngIf="displaySummary">
+
+    <div class="book" *ngIf="!displayAddress">
+      <img src="../../../assets/BookImages/Image 11.png" />
       <div>
-        <h3>Order Summary</h3>
-        <div class="book">
-          <img src="./../../../assets/BookImages/Image 11.png" />
-          <div>
-            <p class="description">{{ data.bookName }}</p>
-            <p class="author">by {{ data.author }}</p>
-            <p class="price">Rs. {{ data.price }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="placeOrder">
-        <div class="order">CHECKOUT</div>
+        <p>Books Description</p>
+        <h5>Book Author</h5>
+        <p>Price</p>
       </div>
     </div>
   </div>
-  <div></div>
+
   <app-footer></app-footer>
 </div>

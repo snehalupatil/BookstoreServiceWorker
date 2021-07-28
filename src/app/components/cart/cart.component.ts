@@ -11,7 +11,8 @@ export class CartComponent implements OnInit {
  
   
   displayAddress = true;
-  displaySummary = true;
+  
+  labelPosition: 'before' | 'after' = 'after';
   
   data: any;
 
@@ -28,14 +29,10 @@ export class CartComponent implements OnInit {
     this.data = this.data['details']
   }
 
-  toggleShowAddress(){
-    this.displayAddress = false
-     this.displaySummary = false
-  }
-
-  toggleShowSummary(){
-    this.displaySummary = false
-  }
   
+
+  address(){
+    this.displayAddress = false
+  }
 }
 
