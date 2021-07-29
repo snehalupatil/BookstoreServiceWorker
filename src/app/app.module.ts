@@ -29,6 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AddressComponent } from './components/address/address.component';
 import { BookComponent } from './components/book/book.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PlaceorderComponent } from './components/placeorder/placeorder.component';
 
 
 
@@ -46,6 +47,7 @@ import { CartComponent } from './components/cart/cart.component';
     AddressComponent,
     BookComponent,
     CartComponent,
+    PlaceorderComponent,
     
     
   ],

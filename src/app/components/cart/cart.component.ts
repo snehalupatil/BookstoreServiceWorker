@@ -74,6 +74,10 @@ export class CartComponent implements OnInit {
       this.getCartItems();
     })
   }
+
+  placeOrder(){
+    this.router.navigate(['/placeorder']);
+  }
   
 }
 
