@@ -11,13 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
  
   
-  displayAddress = true;
+  // displayAddress = true;
   
-  labelPosition: 'before' | 'after' = 'after';
+  position: 'before' | 'after' = 'after';
   
   carts: Array<any> = [];
 
   data: any;
+
+  num:any=1;
+  step = 0;
+  setStep(index: number) {
+    this.step = index;
+  }
+  nextStep() {
+    this.step++;
+  }
 
   constructor(private router: Router, private bookService: BookServiceService){}
 
@@ -28,27 +37,25 @@ export class CartComponent implements OnInit {
 
   token_Id = localStorage.getItem('token');
 
-  address(){
-    this.displayAddress = false
-  }
+  // address(){
+  //   this.displayAddress = false
+  // }
 
   getCartItems(){
     this.bookService.getCartItems(this.token_Id).subscribe((data:any)=>{
-      this.carts = data['result'];
+      this.carts = data.result;
       console.log(this.carts);
 
     },(error)=>{
-      console.log(error);
+      console.log(error)
     })
   }
 
   removeCartItem(data:any){
     this.carts.splice(data,1);
-    this.bookService.removeCartItem(data,this.token_Id).subscribe((res:any)=>{
-      console.log("cart Item removed sucessfully",res);
+    this.bookService.removeCartItem(data,this.token_Id).subscribe((responce:any)=>{
+      console.log("Cart Item removed sucessfully",responce);
       this.getCartItems();
-      //this.bag=this.cartservice.getCartItems();
-      
     })
   }
   

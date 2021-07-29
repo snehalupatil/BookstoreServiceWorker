@@ -1,20 +1,31 @@
-<div class="container">
+<div class="header">
   <app-header [carts]="carts"></app-header>
-
-  <div class="main">
-    <div style="background-color: #ffffff; height: 5%; padding-top: 14px">
-      Home/My cart
-    </div>
-    <!-- Books details -->
-
-    <div class="cart">
-      <div>
-        <h3>My Cart()</h3>
-        <ng-container *ngFor="let cart of carts">
-          <div class="book" style="flex-direction: row">
-            <img src="../../../assets/BookImages/Image 11.png" />
+</div>
+<mat-accordion>
+  <div>
+    <mat-expansion-panel
+      [expanded]="step === 0"
+      (opened)="setStep(0)"
+      hideToggle
+      class="center"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold">
+          My cart({{ carts.length }})
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let cart of carts; let i = index">
+        <div style="display: flex">
+          <span>
+            <img
+              mat-panel-image
+              src="./../../../assets/BookImages/Image 11.png"
+              class="image"
+            />
+          </span>
+          <span class="position">
             <div style="margin-left: 20px">
-              <span>{{ cart.product_id.description }}</span>
+              <span>{{ cart.product_id.bookName }}</span>
               <h5 style="margin-bottom: 5px; color: #9d9d9d">
                 by {{ cart.product_id.author }}
               </h5>
@@ -28,137 +39,150 @@
                 >Rs. {{ cart.product_id.price }}</span
               >
             </div>
+            <div>
+              <button
+                style="margin-left: 10px"
+                mat-stroked-button
+                (click)="removeCartItem(cart)"
+              >
+                remove
+              </button>
+            </div>
+          </span>
+          <div class="location">
+            <div style="display: flex; align-items: flex-end">
+              <mat-icon> pin_drop</mat-icon> Use current location
+            </div>
+            <mat-icon>expand_more</mat-icon>
           </div>
-          <button mat-stroked-button (click)="removeCartItem(cart)">
-            remove
-          </button>
-        </ng-container>
+        </div>
       </div>
 
-      <div class="placeOrder">
-        <div class="location">
-          <div style="display: flex; align-items: flex-end">
-            <mat-icon> pin_drop</mat-icon> Use current location
-          </div>
-          <mat-icon>expand_more</mat-icon>
-        </div>
-
-        <div class="order" (click)="address()">PLACE ORDER</div>
-      </div>
-    </div>
-
-    <!-- Address -->
-    <div class="address" *ngIf="displayAddress">
-      <span>Address Details</span>
-    </div>
-
-    <div class="custermerAddress" *ngIf="!displayAddress">
-      <div style="width: 75%">
-        <h2 class="details">Customer Details</h2>
-        <div style="display: flex; justify-content: space-between">
-          <div>
-            <h4 style="margin: 0px" class="textName">Full Name</h4>
-            <mat-form-field appearance="outline" class="placewidth">
-              <input matInput placeholder="" />
-            </mat-form-field>
-          </div>
-          <div>
-            <h4 style="margin: 0px" class="textName">Mobile Number</h4>
-            <mat-form-field appearance="outline" class="placewidth">
-              <input matInput placeholder="" />
-            </mat-form-field>
-          </div>
-        </div>
-        <div style="margin-top: 20px">
-          <h4 style="margin: 0px" class="textName">Address</h4>
-          <mat-form-field appearance="outline" class="addressWidth">
-            <input matInput placeholder="" />
-          </mat-form-field>
-        </div>
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            margin-top: 35px;
-          "
-        >
-          <div>
-            <h4 style="margin: 0px" class="textName">City/town</h4>
-            <mat-form-field appearance="outline" class="placewidth">
-              <input matInput placeholder="" />
-            </mat-form-field>
-          </div>
-          <div>
-            <h4 style="margin: 0px" class="textName">State</h4>
-            <mat-form-field appearance="outline" class="placewidth">
-              <input matInput placeholder="" />
-            </mat-form-field>
-          </div>
-        </div>
-        <div>
-          <h4 style="margin-top: 10px" class="textName">Type</h4>
-          <mat-radio-group [(ngModel)]="labelPosition">
-            <mat-radio-button class="example-margin" value="home"
-              >Home</mat-radio-button
-            >
-            <mat-radio-button class="example-margin" value="work"
-              >Work</mat-radio-button
-            >
-            <mat-radio-button class="example-margin" value="other"
-              >Other</mat-radio-button
-            >
-          </mat-radio-group>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        "
-      >
-        <div class="newAddress">
-          <span style="color: #a03037; padding: 20px 0px 20px 19px"
-            >Add New Address</span
-          >
-        </div>
-        <div>
-          <div class="continue" (click)="address()">Continue</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- summary -->
-    <div class="address" *ngIf="displayAddress">
-      <span>Order Summary</span>
-    </div>
-
-    <div class="book" *ngIf="!displayAddress">
-      <ng-container *ngFor="let cart of carts">
-        <div class="book" style="flex-direction: row">
-          <img src="../../../assets/BookImages/Image 11.png" />
-          <div style="margin-left: 20px">
-            <span>{{ cart.product_id.description }}</span>
-            <h5 style="margin-bottom: 5px; color: #9d9d9d">
-              by {{ cart.product_id.author }}
-            </h5>
-            <span
-              style="
-                font: normal normal bold 15px/18px Lato;
-                letter-spacing: 0px;
-                color: #0a0102;
-                opacity: 1;
-              "
-              >Rs. {{ cart.product_id.price }}</span
-            >
-          </div>
-        </div>
-        <button mat-stroked-button (click)="removeCartItem(cart)">
-          remove
-        </button>
-      </ng-container>
-    </div>
-
-    <!-- <app-footer></app-footer> -->
+      <div class="order" (click)="nextStep()">PLACE ORDER</div>
+    </mat-expansion-panel>
   </div>
-</div>
+</mat-accordion>
+
+<mat-accordion>
+  <div class="main">
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold"
+          >Customer Details</mat-panel-title
+        >
+      </mat-expansion-panel-header>
+      <div style="margin-left: 550px">
+        <span style="color: #a03037; padding: 20px 0px 20px 19px"
+          >Add New Address</span
+        >
+      </div>
+
+      <form>
+        <div class="mat-div">
+          <div class="form-div">
+            <mat-form-field appearance="outline">
+              <mat-label>Full Name</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+          </div>
+          <div class="form-div">
+            <mat-form-field appearance="outline">
+              <mat-label>Pin Code</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+          </div>
+          <div class="address-div">
+            <mat-form-field class="address-field" appearance="outline">
+              <mat-label>Address</mat-label>
+              <textarea
+                matInput
+                type="text"
+                placeholder="fullAddress"
+                id="fullAddress"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="form-div">
+            <mat-form-field appearance="outline">
+              <mat-label>City/Town</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>state</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+          </div>
+          <div>
+            <h2 style="margin-left: -570px" class="textName">Type</h2>
+            <mat-radio-group aria-label="Type">
+              <div class="mat-radio">
+                <mat-radio-button value="home">Home</mat-radio-button>
+                <mat-radio-button value="work">Work</mat-radio-button>
+                <mat-radio-button value="other">Other</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="continue" (click)="nextStep()">CONTINUE</div>
+      </form>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
+
+<mat-accordion>
+  <div>
+    <mat-expansion-panel
+      [expanded]="step === 2"
+      (opened)="setStep(2)"
+      hideToggle
+      class="center"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-weight: bold">
+          Order Summary
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let cart of carts">
+        <div style="display: flex">
+          <span>
+            <img
+              mat-panel-image
+              src="./../../../assets/BookImages/Image 11.png"
+              class="image"
+            />
+          </span>
+          <span class="position">
+            <div style="margin-left: 20px">
+              <span>{{ cart.product_id.bookName }}</span>
+              <h5 style="margin-bottom: 5px; color: #9d9d9d">
+                by {{ cart.product_id.author }}
+              </h5>
+              <span
+                style="
+                  font: normal normal bold 15px/18px Lato;
+                  letter-spacing: 0px;
+                  color: #0a0102;
+                  opacity: 1;
+                "
+                >Rs. {{ cart.product_id.price }}</span
+              >
+            </div>
+          </span>
+        </div>
+
+        <div class="order">CHECKOUT</div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
+<app-footer class="footer"></app-footer>
