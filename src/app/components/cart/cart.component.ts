@@ -19,14 +19,33 @@ export class CartComponent implements OnInit {
 
   data: any;
 
-  num:any=1;
-  step = 0;
+  step = true;
+  step1 = false;
+  step2 = false;
+
+  // num:any=1;
+  // step = 0;
+  // setStep(index: number) {
+  //   this.step = index;
+  // }
+  // nextStep() {
+  //   this.step++;
+  // }
+
   setStep(index: number) {
-    this.step = index;
+    this.step = true;
   }
-  nextStep() {
-    this.step++;
+
+  setStep1(index: number) {
+    this.step1 = true;
   }
+
+  setStep2(index: number) {
+    this.step2 = true;
+  }
+
+
+
 
   constructor(private router: Router, private bookService: BookServiceService){}
 

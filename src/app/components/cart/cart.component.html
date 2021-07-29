@@ -4,7 +4,7 @@
 <mat-accordion>
   <div>
     <mat-expansion-panel
-      [expanded]="step === 0"
+      [expanded]="step"
       (opened)="setStep(0)"
       hideToggle
       class="center"
@@ -58,14 +58,14 @@
         </div>
       </div>
 
-      <div class="order" (click)="nextStep()">PLACE ORDER</div>
+      <div class="order" (click)="setStep1(1)">PLACE ORDER</div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>
 
 <mat-accordion>
   <div class="main">
-    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+    <mat-expansion-panel [expanded]="step1" (opened)="setStep1(1)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title style="font-weight: bold"
           >Customer Details</mat-panel-title
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <div class="continue" (click)="nextStep()">CONTINUE</div>
+        <div class="continue" (click)="setStep2(2)">CONTINUE</div>
       </form>
     </mat-expansion-panel>
   </div>
@@ -142,8 +142,8 @@
 <mat-accordion>
   <div>
     <mat-expansion-panel
-      [expanded]="step === 2"
-      (opened)="setStep(2)"
+      [expanded]="step2"
+      (opened)="setStep2(2)"
       hideToggle
       class="center"
     >
