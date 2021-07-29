@@ -1,11 +1,18 @@
 import { HttpServiceService } from './../httpService/http-service.service';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookServiceService {
+  
+  private refresh = new Subject<void>();
+
+  getRefreshedData(){
+    return this.refresh;
+  }
 
   constructor( private httpService: HttpServiceService ) { }
 

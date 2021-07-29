@@ -1,3 +1,4 @@
+import { BookServiceService } from './../../service/bookService/book-service.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,13 +10,29 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   
   @Input() carts:any;
-  badgeContent: number | undefined;
-
-
-  constructor( private router: Router ) { }
+ 
+  @Input() count: Number | undefined;
+ 
+  constructor( private router: Router, private bookService: BookServiceService ) {}
+  token_Id = localStorage.getItem('token');
 
   ngOnInit(): void {
+    // this.bookService.getRefreshedData().subscribe((data:any) =>this.getCartItems());
+    this.getCartItems();
   }
+
+  getCartItems(){
+    this.bookService.getCartItems(this.token_Id).subscribe((data:any)=>{
+      this.carts = data.result;
+      console.log(this.carts);
+      this.count= this.carts.length;
+
+    },(error)=>{
+      console.log(error)
+    })
+  }
+
+
  
 
   redirectToCart() {

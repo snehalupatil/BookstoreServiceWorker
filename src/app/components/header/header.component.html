@@ -20,14 +20,22 @@
       </mat-menu>
     </div>
     <div class="header_right_cart" style="cursor: pointer">
-      <mat-icon
-        [matBadge]="badgeContent"
-        matBadgeSize="small"
-        class="headerButton"
-        (click)="redirectToCart()"
+      <button
+        mat-icon-button
+        #tooltip="matTooltip"
+        matTooltip="cart"
+        class="bag"
       >
-        shopping_cart</mat-icon
-      >
+        <mat-icon
+          matBadge="{{ count }}"
+          matBadgeSize="small"
+          class="headerButton"
+          matBadgeColor="warn"
+          (click)="redirectToCart()"
+        >
+          shopping_cart</mat-icon
+        >
+      </button>
       <h5>Cart</h5>
     </div>
   </div>

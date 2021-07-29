@@ -16,6 +16,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 import { LoginComponent } from './pages/login/login.component';
@@ -64,7 +65,8 @@ import { CartComponent } from './components/cart/cart.component';
     MatRadioModule,
     MatPaginatorModule,
     MatBadgeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTooltipModule
 
   ],
   providers: [],

@@ -1,6 +1,6 @@
 import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -11,12 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
  
   
-  // displayAddress = true;
-  
   position: 'before' | 'after' = 'after';
   
   carts: Array<any> = [];
-
+  bag:any;
+  
   data: any;
 
   step = true;
@@ -44,27 +43,19 @@ export class CartComponent implements OnInit {
     this.step2 = true;
   }
 
-
-
-
   constructor(private router: Router, private bookService: BookServiceService){}
 
   ngOnInit(): void {  
-    this.getCartItems();
-    
+    this.getCartItems();  
   }
 
   token_Id = localStorage.getItem('token');
-
-  // address(){
-  //   this.displayAddress = false
-  // }
 
   getCartItems(){
     this.bookService.getCartItems(this.token_Id).subscribe((data:any)=>{
       this.carts = data.result;
       console.log(this.carts);
-
+      this.bag = this.carts.length;
     },(error)=>{
       console.log(error)
     })

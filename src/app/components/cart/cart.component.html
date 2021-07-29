@@ -1,5 +1,5 @@
 <div class="header">
-  <app-header [carts]="carts"></app-header>
+  <app-header [count]="bag"></app-header>
 </div>
 <mat-accordion>
   <div>
@@ -49,14 +49,14 @@
               </button>
             </div>
           </span>
-          <div class="location">
+        </div>
+      </div>
+      <!-- <div class="location">
             <div style="display: flex; align-items: flex-end">
               <mat-icon> pin_drop</mat-icon> Use current location
             </div>
             <mat-icon>expand_more</mat-icon>
-          </div>
-        </div>
-      </div>
+          </div> -->
 
       <div class="order" (click)="setStep1(1)">PLACE ORDER</div>
     </mat-expansion-panel>
@@ -179,9 +179,8 @@
             </div>
           </span>
         </div>
-
-        <div class="order">CHECKOUT</div>
       </div>
+      <div class="order">CHECKOUT</div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>
