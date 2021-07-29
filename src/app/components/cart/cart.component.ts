@@ -31,16 +31,22 @@ export class CartComponent implements OnInit {
   //   this.step++;
   // }
 
+  div1:boolean= true
+  div2:boolean=true
+
   setStep(index: number) {
     this.step = true;
   }
 
   setStep1(index: number) {
     this.step1 = true;
+    this.div1 = false;
   }
 
   setStep2(index: number) {
     this.step2 = true;
+    this.div1 = false;
+    this.div2 = false;
   }
 
   constructor(private router: Router, private bookService: BookServiceService){}

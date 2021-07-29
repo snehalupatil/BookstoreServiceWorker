@@ -45,7 +45,7 @@
                 mat-stroked-button
                 (click)="removeCartItem(cart)"
               >
-                remove
+                Remove
               </button>
             </div>
           </span>
@@ -58,7 +58,7 @@
             <mat-icon>expand_more</mat-icon>
           </div> -->
 
-      <div class="order" (click)="setStep1(1)">PLACE ORDER</div>
+      <div class="order" (click)="setStep1(1)" *ngIf="div1">PLACE ORDER</div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <div class="continue" (click)="setStep2(2)">CONTINUE</div>
+        <div class="continue" (click)="setStep2(2)" *ngIf="div2">CONTINUE</div>
       </form>
     </mat-expansion-panel>
   </div>
