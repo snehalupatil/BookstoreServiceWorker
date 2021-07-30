@@ -37,6 +37,17 @@ export class BookServiceService {
     console.log("data in remove item",data._id);
     return this.httpService.delete(`${this.url}bookstore_user/remove_cart_item/${data._id}`, { }, true, token)
   }
-}
+
+  customerDetails(data:any, token:any){
+    console.log("Address data",data);
+    return this.httpService.put(`${this.url}bookstore_user/edit_user`, data, true, token)
+  }
+
+    orderPlace = (data: any, token: any) => {
+      // console.log(data, token)
+      return this.httpService.post(`${this.url}bookstore_user/add/order`, data, true, token)
+    } 
+  }
+
 
 

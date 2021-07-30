@@ -77,29 +77,20 @@
         >
       </div>
 
-      <form>
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
         <div class="mat-div">
           <div class="form-div">
             <mat-form-field appearance="outline">
               <mat-label>Full Name</mat-label>
-              <input matInput type="text" />
+              <input matInput type="text" formControlName="fullName" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Mobile Number</mat-label>
-              <input matInput type="text" />
+              <input matInput type="text" formControlName="phone" />
             </mat-form-field>
           </div>
-          <div class="form-div">
-            <mat-form-field appearance="outline">
-              <mat-label>Pin Code</mat-label>
-              <input matInput type="text" />
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
-              <input matInput type="text" />
-            </mat-form-field>
-          </div>
+
           <div class="address-div">
             <mat-form-field class="address-field" appearance="outline">
               <mat-label>Address</mat-label>
@@ -107,33 +98,41 @@
                 matInput
                 type="text"
                 placeholder="fullAddress"
-                id="fullAddress"
+                formControlName="fullAddress"
               ></textarea>
             </mat-form-field>
           </div>
           <div class="form-div">
             <mat-form-field appearance="outline">
               <mat-label>City/Town</mat-label>
-              <input matInput type="text" />
+              <input matInput type="text" formControlName="city" />
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>state</mat-label>
-              <input matInput type="text" />
+              <input matInput type="text" formControlName="state" />
             </mat-form-field>
           </div>
           <div>
-            <h2 style="margin-left: -570px" class="textName">Type</h2>
-            <mat-radio-group aria-label="Type">
-              <div class="mat-radio">
-                <mat-radio-button value="home">Home</mat-radio-button>
-                <mat-radio-button value="work">Work</mat-radio-button>
-                <mat-radio-button value="other">Other</mat-radio-button>
-              </div>
+            <h4 style="margin-top: 10px; margin-left: -570px" class="textName">
+              Type
+            </h4>
+            <mat-radio-group formControlName="addressType">
+              <mat-radio-button class="example-margin" value="Home"
+                >Home</mat-radio-button
+              >
+              <mat-radio-button class="example-margin" value="Office"
+                >Office</mat-radio-button
+              >
+              <mat-radio-button class="example-margin" value="Other"
+                >Other</mat-radio-button
+              >
             </mat-radio-group>
           </div>
         </div>
 
-        <div class="continue" (click)="setStep2(2)" *ngIf="div2">CONTINUE</div>
+        <div class="continue" (click)="setStep2(2); submit()" *ngIf="div2">
+          CONTINUE
+        </div>
       </form>
     </mat-expansion-panel>
   </div>

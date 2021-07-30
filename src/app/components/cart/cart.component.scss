@@ -27,9 +27,13 @@
 
 .textName {
   width: 54px;
-
+  height: 16px;
   font: normal normal normal 12px/16px Roboto;
   color: #0a0102;
+}
+
+.example-margin {
+  margin: 0 50px;
 }
 
 .newAddress {
