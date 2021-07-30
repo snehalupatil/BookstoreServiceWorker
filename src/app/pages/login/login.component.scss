@@ -55,3 +55,25 @@ img {
 .select {
   cursor: pointer;
 }
+
+@media screen and (min-width: 411px) {
+  .page {
+    width: 100%;
+    height: 100%;
+  }
+
+  .icons {
+    width: 45.68%;
+    height: 50.9%;
+  }
+
+  .dashboard {
+    width: 25%;
+    height: 59%;
+  }
+
+  .text {
+    padding: 0% 0% 0% 8%;
+    font-size: large;
+  }
+}

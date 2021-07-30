@@ -17,6 +17,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { LoginComponent } from './pages/login/login.component';
@@ -68,7 +69,8 @@ import { PlaceorderComponent } from './components/placeorder/placeorder.componen
     MatPaginatorModule,
     MatBadgeModule,
     MatExpansionModule,
-    MatTooltipModule
+    MatTooltipModule,
+    NgxPaginationModule
 
   ],
   providers: [],

@@ -19,15 +19,16 @@
           <h5 style="color: #878787">({{ book.quantity }})</h5>
         </div>
         <h4 class="price">Rs. {{ book.price }}</h4>
-
-        <div class="alternateButton" *ngIf="displayShow">
-          <button class="addCartButton" (click)="addtoCart(book)">
-            ADD TO BAG
-          </button>
-          <button class="whishlist">&#x2764; WISHLIST</button>
-        </div>
-        <div class="alternateButton" *ngIf="!displayShow">
-          <button class="addedCart">ADDED TO CART</button>
+        <div>
+          <div class="alternateButton" *ngIf="displayShow">
+            <button class="addCartButton" (click)="addtoCart(book)">
+              ADD TO BAG
+            </button>
+            <button class="whishlist">&#x2764; WISHLIST</button>
+          </div>
+          <div class="alternateButton" *ngIf="!displayShow">
+            <button class="addedCart">ADDED TO CART</button>
+          </div>
         </div>
         <div class="view">QUICK VIEW</div>
       </div>

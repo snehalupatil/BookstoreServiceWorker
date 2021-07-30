@@ -9,13 +9,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BookComponent } from './components/book/book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceorderComponent } from './components/placeorder/placeorder.component';
+import { AuthServiceService } from './service/authService/auth-service.service';
 
 const routes: Routes = [
   {
-    path:'login',
+    path:'',
     component:LoginComponent,
     children:[
-      { path: 'signin', component: SigninComponent },
+      { path: 'login', component: SigninComponent, canActivate:[ AuthServiceService ] },
       { path: 'signup', component: SignupComponent }
     ]
   },

@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   
   @Input() carts:any;
  
-  @Input() count: Number | undefined;
+  count: Number | undefined;
  
   constructor( private router: Router, private bookService: BookServiceService ) {}
   token_Id = localStorage.getItem('token');

@@ -13,10 +13,11 @@ export class HomeComponent implements OnInit {
   displayShow = true;
   book: any;
   bag: any;
- 
 
   constructor( private bookService: BookServiceService, private router: Router) { }
   books: Array<any> = [];
+
+  
 
   ngOnInit(): void {
     this.getBooks();

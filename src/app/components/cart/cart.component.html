@@ -1,5 +1,5 @@
 <div class="header">
-  <app-header [count]="bag"></app-header>
+  <app-header></app-header>
 </div>
 <mat-accordion>
   <div>
@@ -113,10 +113,13 @@
             </mat-form-field>
           </div>
           <div>
-            <h4 style="margin-top: 10px; margin-left: -570px" class="textName">
+            <h3 style="margin-top: 10px; margin-left: -570px" class="textName">
               Type
-            </h4>
-            <mat-radio-group formControlName="addressType">
+            </h3>
+            <mat-radio-group
+              style="margin-left: -200px"
+              formControlName="addressType"
+            >
               <mat-radio-button class="example-margin" value="Home"
                 >Home</mat-radio-button
               >

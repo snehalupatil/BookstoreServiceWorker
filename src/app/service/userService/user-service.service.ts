@@ -19,8 +19,7 @@ export class UserServiceService {
     return this.httpService.post(`${this.url}bookstore_user/login`, data)
   }
 
-  customerDetails(data:any){
-    console.log("data in user service",data);
-    return this.httpService.put(`${this.url}bookstore_user​/edit_user`, data)
+  loggedIn(){
+    return !!localStorage.getItem('token')
   }
 }
