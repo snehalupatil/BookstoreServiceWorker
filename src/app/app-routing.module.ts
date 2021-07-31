@@ -16,11 +16,11 @@ const routes: Routes = [
     path:'',
     component:LoginComponent,
     children:[
-      { path: 'login', component: SigninComponent, canActivate:[ AuthServiceService ] },
+      { path: 'login', component: SigninComponent },
       { path: 'signup', component: SignupComponent }
     ]
   },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent,canActivate:[ AuthServiceService ] },
   { path: 'book', component: BookComponent },
   { path: 'cart', component:CartComponent },
   { path: 'placeorder', component:PlaceorderComponent }

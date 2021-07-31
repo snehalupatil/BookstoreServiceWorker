@@ -9,13 +9,16 @@
     <div class="header_right_profile">
       <mat-icon mat-button [matMenuTriggerFor]="menu">person</mat-icon>
       <h5>Profile</h5>
-      <mat-menu class="user-box" #menu="matMenu" yPosition="below">
+      <mat-menu class="user-box" #menu="matMenu" xPosition="before">
         <div class="profile_dropdown">
           <h5 style="font-weight: bold">Hello, Snehal</h5>
           <button class="description" mat-menu-item>Profile</button>
           <button class="myorders" mat-menu-item>My Orders</button>
           <button class="wishlist" mat-menu-item>Wishlist</button>
-          <button class="logout_button" style="color: brown">Logout</button>
+          <button class="button" style="color: brown; "  (click)= "logout()" mat-stroked-button>
+            Logout
+        </button>
+          <!-- <button class="logout_button" style="color: brown; pointer:cursor" (click)= "logout()">Logout</button> -->
         </div>
       </mat-menu>
     </div>

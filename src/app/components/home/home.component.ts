@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   book: any;
   bag: any;
 
+  p: number = 1;
+
   constructor( private bookService: BookServiceService, private router: Router) { }
   books: Array<any> = [];
 

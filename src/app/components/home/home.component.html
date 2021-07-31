@@ -1,5 +1,5 @@
 <div class="displayBox">
-  <ng-container *ngFor="let book of books">
+  <ng-container *ngFor="let book of books | paginate: {itemsPerPage: 8 , currentPage:p}">
     <div class="productBody">
       <div class="bookImg">
         <img
@@ -35,3 +35,6 @@
     </div>
   </ng-container>
 </div>
+<div id="pagination" style="display: flex; justify-content: center;">
+  <pagination-controls (pageChange)="p=($event)"></pagination-controls>
+</div> 
