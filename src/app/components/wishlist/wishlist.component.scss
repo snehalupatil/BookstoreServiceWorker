@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  height: 100%;
+  margin: 0px 253px 0px 253px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0;
+}
+
+.cart {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d1d0d0;
+  border-radius: 1px;
+  padding: 10px 30px 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book {
+  width: 256px;
+  height: 89px;
+  opacity: 1;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  display: flex;
+}
+
+.remove {
+  margin-top: 35px;
+}

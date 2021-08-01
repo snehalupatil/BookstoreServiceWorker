@@ -49,12 +49,28 @@ export class HomeComponent implements OnInit {
     this.bookService.addCart(data, this.token_Id).subscribe((response:any) => {
       console.log(response)
 
+    
     },(error)=>{
       console.log(error);
     })
     this.displayShow = false
   }
 
+
+  whishlist(cart: any){
+    let wishlistData = {
+      "id": cart._id,
+      "token": this.token_Id
+    }
+    this.bookService.addWishlist(wishlistData, this.token_Id).subscribe((response: any)=>{
+      console.log(response)
+    },
+    error => {
+      console.log(error);
+    });
+
+    this.router.navigate(['/wishlist']);
+  }
   
 }
 

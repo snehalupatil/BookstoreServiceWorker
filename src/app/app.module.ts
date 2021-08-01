@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,8 @@ import { AddressComponent } from './components/address/address.component';
 import { BookComponent } from './components/book/book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceorderComponent } from './components/placeorder/placeorder.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+
 
 
 
@@ -49,6 +52,8 @@ import { PlaceorderComponent } from './components/placeorder/placeorder.componen
     BookComponent,
     CartComponent,
     PlaceorderComponent,
+    WishlistComponent,
+   
     
     
   ],
@@ -70,7 +75,8 @@ import { PlaceorderComponent } from './components/placeorder/placeorder.componen
     MatBadgeModule,
     MatExpansionModule,
     MatTooltipModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FlexLayoutModule
 
   ],
   providers: [],

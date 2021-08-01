@@ -70,12 +70,10 @@
   margin-top: -15px;
 }
 
-::ng-deep.mat-stroked-button{
-  border: 1px solid #A03037;
+::ng-deep.mat-stroked-button {
+  border: 1px solid #a03037;
   border-radius: 2px;
-  
 }
-
 
 .line {
   margin-top: -5px;
@@ -89,25 +87,25 @@
   margin-top: -20px;
 }
 
-@media (max-width: 1270px) {
-  .container {
-    width: 100%;
-    min-width: 50px;
-  }
+::ng-deep.mat-badge-content {
+  background: #ffffff;
+  color: #a03037;
+}
 
+::ng-deep.mat-menu-content:not(:empty) {
+  width: 150px !important;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep.mat-stroked-button {
+  border: 1px solid #a03037;
+  border-radius: 2px;
+}
+
+@media (max-width: 1010px) {
   .header_left {
-    height: 60px;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .mat-form-field {
-    width: 100%;
-    min-width: 10px;
-    height: 68px;
-  }
-  .button {
-    width: 100%;
+    width: 430px;
   }
 }

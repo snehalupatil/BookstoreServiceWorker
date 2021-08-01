@@ -1,0 +1,46 @@
+<div class="container">
+  <app-header></app-header>
+
+  <div class="main">
+    <div style="background-color: #ffffff; height: 5%; padding-top: 14px">
+      Home/My Wishlist
+    </div>
+    <div class="cart">
+      <div style="width: 100%">
+        <h3>My Cart({{ wishlistBook.length }})</h3>
+        <ng-container *ngFor="let list of wishlistBook">
+          <div style="display: flex; justify-content: space-between">
+            <div class="book" style="flex-direction: row">
+              <img src="../../../assets/BookImages/Image 11.png" />
+              <div style="margin-left: 20px">
+                <h4 style="width: 300px; margin-bottom: 0">
+                  {{ list.product_id.description }}
+                </h4>
+                <h5 style="margin-bottom: 5px; color: #9d9d9d">
+                  by {{ list.product_id.author }}
+                </h5>
+                <span
+                  style="
+                    font: normal normal bold 15px/18px Lato;
+                    letter-spacing: 0px;
+                    color: #0a0102;
+                    opacity: 1;
+                  "
+                  >Rs. {{ list.product_id.price }}</span
+                >
+              </div>
+            </div>
+            <div class="remove">
+              <mat-icon (click)="removeItem(list)" style="cursor: pointer"
+                >delete</mat-icon
+              >
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <app-footer class="footer"></app-footer>
+</div>

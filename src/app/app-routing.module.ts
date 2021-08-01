@@ -10,6 +10,7 @@ import { BookComponent } from './components/book/book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceorderComponent } from './components/placeorder/placeorder.component';
 import { AuthServiceService } from './service/authService/auth-service.service';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,canActivate:[ AuthServiceService ] },
   { path: 'book', component: BookComponent },
   { path: 'cart', component:CartComponent },
-  { path: 'placeorder', component:PlaceorderComponent }
+  { path: 'placeorder', component:PlaceorderComponent },
+  { path: 'wishlist', component: WishlistComponent }
 ];
 
 @NgModule({

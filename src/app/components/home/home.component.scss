@@ -162,3 +162,10 @@ div.description:hover {
   background-color: #333333;
   cursor: pointer;
 }
+
+@media (max-width: 705px) {
+  .productBody {
+    height: 306px;
+    width: 252px;
+  }
+}
