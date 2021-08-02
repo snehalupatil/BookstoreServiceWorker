@@ -12,6 +12,7 @@ export class WishlistComponent implements OnInit {
   constructor( private bookService: BookServiceService ) { }
 
   ngOnInit(): void {
+    this.getwishlist()
   }
 
   token_Id = localStorage.getItem('token');
@@ -28,7 +29,7 @@ export class WishlistComponent implements OnInit {
     this.bookService.deleteWishlist(data.product_id._id, this.token_Id).subscribe((response:any)=>{
       console.log(response);
       
-      this.getwishlist()
+      this.getwishlist();
     },
     error => {
       console.log(error);

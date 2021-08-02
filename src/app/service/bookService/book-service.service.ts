@@ -58,7 +58,7 @@ export class BookServiceService {
 
   deleteWishlist = (data: any, token: any) => {
     console.log(data, token)
-    return this.httpService.delete(`${this.url}bookstore_user/remove_wishlist_item/${data}`, true, token)
+    return this.httpService.delete(`${this.url}bookstore_user/remove_wishlist_item/${data}`, { }, true, token)
   }
 
   }
