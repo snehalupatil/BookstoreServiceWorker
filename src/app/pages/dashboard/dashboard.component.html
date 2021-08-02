@@ -9,8 +9,8 @@
 
     <select class="sortby" style="font-weight: bold; margin-right: 85px">
       <option>Sort by relevance</option>
-      <option>Price: High to Low</option>
-      <option>Price: Low to High</option>
+      <option (click)="sortBy('p')">Price: High to Low</option>
+      <option (click)="sortBy('phl')">Price: Low to High</option>
       <option>Newest Arrival</option>
     </select>
   </div>

@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
 
   constructor( private bookService: BookServiceService ) { }
   books= []
+  sort:String="Sort By";
+
   ngOnInit(): void {
     this.getBooks()
   }
@@ -23,5 +25,20 @@ export class DashboardComponent implements OnInit {
       this.totalItems = this.books.length;
       
     })
+  }
+
+
+  sortBy = ( sortByIn:string ) => {
+    if (sortByIn == "p") {
+      this.sort="Price(Low-High)";
+      this.books.sort((a: any, b: any) => (a.price) - (b.price));
+    } else if (sortByIn == "phl") {
+      this.sort="Price(High-Low)";
+      this.books.sort((a: any, b: any) => (b.price) - (a.price));
+    }
+   
+    else {
+      console.log("Not available");
+    }
   }
 }

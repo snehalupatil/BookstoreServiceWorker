@@ -10,11 +10,12 @@ import { BookServiceService } from 'src/app/service/bookService/book-service.ser
 
 export class HomeComponent implements OnInit {
 
-  displayShow = true;
+  isAdded = true;
   book: any;
   bag: any;
-
+  b :any;
   p: number = 1;
+  cart: any;
 
   constructor( private bookService: BookServiceService, private router: Router) { }
   books: Array<any> = [];
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooks();
+    this.addtoCart(this.cart);
   }
 
   token_Id = localStorage.getItem('token');
@@ -46,6 +48,17 @@ export class HomeComponent implements OnInit {
     "id": cart._id,
     "token": this.token_Id
     }
+
+    cart.isAdded = false;
+    console.log("cart._id:",cart._id)
+   
+    for (this.b of this.books){
+      let a = console.log("a",cart._id)
+      let b = console.log("b",this.b._id)
+      if (a == b){
+        cart.isAdded = true;
+      }
+    }
     this.bookService.addCart(data, this.token_Id).subscribe((response:any) => {
       console.log(response)
 
@@ -53,7 +66,7 @@ export class HomeComponent implements OnInit {
     },(error)=>{
       console.log(error);
     })
-    this.displayShow = false
+    
   }
 
 

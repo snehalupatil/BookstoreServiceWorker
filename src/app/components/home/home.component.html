@@ -22,7 +22,7 @@
         </div>
         <h4 class="price">Rs. {{ book.price }}</h4>
 
-        <div class="alternateButton" *ngIf="displayShow">
+        <div class="alternateButton" *ngIf="!book.isAdded">
           <button class="addCartButton" (click)="addtoCart(book)">
             ADD TO BAG
           </button>
@@ -30,7 +30,7 @@
             &#x2764; WISHLIST
           </button>
         </div>
-        <div class="alternateButton" *ngIf="!displayShow">
+        <div class="alternateButton" *ngIf="book.isAdded">
           <button class="addedCart">ADDED TO CART</button>
         </div>
 

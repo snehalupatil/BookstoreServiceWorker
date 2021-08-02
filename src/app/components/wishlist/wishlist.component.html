@@ -7,7 +7,9 @@
     </div>
     <div class="cart">
       <div style="width: 100%">
-        <h3>My Cart({{ wishlistBook.length }})</h3>
+        <h3 style="font-weight: bold">
+          My Wishlist({{ wishlistBook.length }})
+        </h3>
         <ng-container *ngFor="let list of wishlistBook">
           <div style="display: flex; justify-content: space-between">
             <div class="book" style="flex-direction: row">

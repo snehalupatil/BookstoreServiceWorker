@@ -14,7 +14,7 @@
           <h5 style="font-weight: bold">Hello, Snehal</h5>
           <button class="description" mat-menu-item>Profile</button>
           <button class="myorders" mat-menu-item>My Orders</button>
-          <button class="wishlist" mat-menu-item>Wishlist</button>
+          <button class="wishlist" mat-menu-item (click)="getWishlist()">Wishlist</button>
           <button class="button" style="color: brown; "  (click)= "logout()" mat-stroked-button>
             Logout
         </button>

@@ -32,13 +32,13 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-
- 
-
   redirectToCart() {
     this.router.navigate(['/cart']);
   }
 
+  getWishlist(){
+    this.router.navigate(['/wishlist']);
+  }
 
   logout() {
     localStorage.clear();

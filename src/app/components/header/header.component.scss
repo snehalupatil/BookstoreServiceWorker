@@ -86,26 +86,3 @@
 .wishlist {
   margin-top: -20px;
 }
-
-::ng-deep.mat-badge-content {
-  background: #ffffff;
-  color: #a03037;
-}
-
-::ng-deep.mat-menu-content:not(:empty) {
-  width: 150px !important;
-  padding: 15px 20px 15px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-::ng-deep.mat-stroked-button {
-  border: 1px solid #a03037;
-  border-radius: 2px;
-}
-
-@media (max-width: 1010px) {
-  .header_left {
-    width: 430px;
-  }
-}
