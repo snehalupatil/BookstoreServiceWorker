@@ -141,3 +141,35 @@ ngb-rating {
   background: #3371b5 0% 0% no-repeat padding-box;
   border-radius: 2px;
 }
+
+@media (max-width: 1300px) {
+  .main {
+    margin: 0px 283px 0px 273px;
+  }
+
+  .book_title {
+    padding: 0px 0px 0px 40px;
+  }
+
+  .largebook {
+    padding: 10px 20px 10px 20px;
+    width: 252px;
+    height: 300px;
+  }
+
+  .details {
+    width: 200px;
+  }
+
+  .button {
+    margin-left: 271px;
+  }
+
+  .review {
+    padding: 10px 1px 5px 10px;
+  }
+
+  .button {
+    margin-left: 120px;
+  }
+}

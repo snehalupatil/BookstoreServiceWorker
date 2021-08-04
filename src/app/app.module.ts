@@ -28,7 +28,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AddressComponent } from './components/address/address.component';
 import { BookComponent } from './components/book/book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceorderComponent } from './components/placeorder/placeorder.component';
@@ -50,7 +49,6 @@ import { environment } from '../environments/environment';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    AddressComponent,
     BookComponent,
     CartComponent,
     PlaceorderComponent,

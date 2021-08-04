@@ -126,3 +126,71 @@
 .email {
   width: 412px;
 }
+
+@media (max-width: 1300px) {
+  .route {
+    margin-left: 250px;
+  }
+
+  .order {
+    margin-left: 375px;
+  }
+
+  .mat-expansion-panel {
+    margin-left: 10px;
+    width: 600px;
+    justify-content: center;
+  }
+
+  .mat-div {
+    width: 400px;
+    margin-right: auto;
+  }
+
+  .newAdress {
+    display: none;
+    overflow: hidden;
+  }
+
+  .mat-form-field {
+    margin-right: 10px;
+  }
+  .address-div {
+    text-align: initial;
+  }
+  .address-field {
+    width: 410px;
+  }
+
+  .radiotype {
+    margin-left: -100px;
+  }
+
+  .typeradio {
+    margin-left: -370px;
+  }
+  .mat-radio {
+    margin-left: 100px;
+  }
+
+  .example-margin {
+    margin: 0 15px;
+  }
+
+  .continue {
+    margin-left: 375px;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mat-accordion {
+    padding: 10px;
+  }
+
+  .email {
+    width: 412px;
+  }
+}
