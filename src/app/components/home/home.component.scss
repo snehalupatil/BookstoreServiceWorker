@@ -162,3 +162,11 @@ div.description:hover {
   background-color: #333333;
   cursor: pointer;
 }
+
+@media (max-width: 420px) {
+  .pagin {
+    display: flex;
+    justify-content: center;
+    margin-left: -100px;
+  }
+}

@@ -12,3 +12,14 @@
 .footer__text {
   padding-left: 180px;
 }
+
+@media (max-width: 420px) {
+  .footer {
+    width: 100%;
+    min-width: 50%;
+  }
+
+  .footer__text {
+    padding-left: 30px;
+  }
+}

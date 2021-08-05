@@ -1,3 +1,8 @@
+.route {
+  margin-top: 10px;
+  margin-left: 400px;
+}
+
 .location {
   width: 275px;
   height: 40px;
@@ -113,6 +118,10 @@
   padding: 10px;
 }
 
+.radiotype {
+  margin-left: -200px;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -192,5 +201,54 @@
 
   .email {
     width: 412px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mat-expansion-panel {
+    margin-top: 10px;
+    width: 350px;
+  }
+  .route {
+    margin-left: 30px;
+  }
+
+  .order {
+    margin-left: 170px;
+  }
+
+  .mat-div {
+    width: 10px;
+  }
+
+  .newAdress {
+    display: none;
+  }
+
+  .mat-form-field {
+    width: 150px;
+  }
+  .address-div {
+    text-align: initial;
+  }
+  .address-field {
+    width: 300px;
+  }
+
+  .textName {
+    margin-left: -15px;
+  }
+
+  .radiotype {
+    margin-left: -5px;
+  }
+
+  .mat-radio {
+    margin-left: 10px;
+  }
+
+  .continue {
+    margin-top: 10px;
+    margin-left: 170px;
   }
 }
