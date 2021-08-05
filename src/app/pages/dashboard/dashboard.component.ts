@@ -15,17 +15,17 @@ export class DashboardComponent implements OnInit {
   sort:String="Sort By";
 
   ngOnInit(): void {
-    this.getBooks()
+    // this.getBooks()
   }
 
-  getBooks(){
-    this.bookService.getAllBooks().subscribe((data:any) => {
-      console.log(data);
-      this.books = data['result']
-      this.totalItems = this.books.length;
+  // getBooks(){
+  //   this.bookService.getAllBooks().subscribe((data:any) => {
+  //     console.log(data);
+  //     this.books = data['result']
+  //     this.totalItems = this.books.length;
       
-    })
-  }
+  //   })
+  // }
 
 
   sortBy = ( sortByIn:string ) => {

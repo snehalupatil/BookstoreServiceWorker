@@ -34,6 +34,7 @@ import { PlaceorderComponent } from './components/placeorder/placeorder.componen
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 
@@ -53,6 +54,7 @@ import { environment } from '../environments/environment';
     CartComponent,
     PlaceorderComponent,
     WishlistComponent,
+    SearchPipe,
    
     
     

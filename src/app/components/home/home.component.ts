@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { BookServiceService } from 'src/app/service/bookService/book-service.service';
+import { DataServiceService } from 'src/app/service/dataService/data-service.service';
 
 @Component({
   selector: 'app-home',
@@ -16,16 +17,30 @@ export class HomeComponent implements OnInit {
   b :any;
   p: number = 1;
   cart: any;
+  bookName:any;
+  sort:String="Sort By";
+  value:any;
+  // cityN:boolean= false;
 
-  constructor( private bookService: BookServiceService, private router: Router) { }
+  constructor( private dataService: DataServiceService, private bookService: BookServiceService, private router: Router) { }
   books: Array<any> = [];
-
-  
+  carts: Array<any> = [];
+  totalItems: any = 0;
 
   ngOnInit(): void {
     this.getBooks();
     this.addtoCart(this.cart);
+    // this.bookService.getRefreshedData().subscribe(() => this.addtoCart(this.cart));
+    // this.dataService.currentsearch.subscribe((res:any)=>{
+    //   console.log(res)
+    //   this.bookName=res
+    // }
+    //   );
+    this.dataService.currentMessage.subscribe((res:any) => {
+      console.log(res);
+    })
   }
+
 
   token_Id = localStorage.getItem('token');
 
@@ -34,6 +49,7 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.books = data['result']
       console.log("Book Array", this.books);
+      this.totalItems = this.books.length;
     })
   }
 
@@ -59,9 +75,10 @@ export class HomeComponent implements OnInit {
         cart.isAdded = true;
       }
     }
+    // this.bookService.getRefreshedData().subscribe(() => this.addtoCart(this.cart));
     this.bookService.addCart(data, this.token_Id).subscribe((response:any) => {
-      console.log(response)
-
+      console.log(response);
+      cart.isAdded = true;
     
     },(error)=>{
       console.log(error);
@@ -83,6 +100,23 @@ export class HomeComponent implements OnInit {
     });
 
     this.router.navigate(['/wishlist']);
+  }
+
+
+  sortBy(value: String){
+    if (value == "ASC") {
+      console.log("Hi")
+      this.sort="Price(Low-High)";
+      this.books.sort((a, b) => a.price - b.price);
+      console.log(this.books)
+    } else if (value == "DSC") {
+      this.sort="Price(High-Low)";
+      this.books.sort((a, b) => b.price - a.price);
+    }
+   
+    else {
+      console.log("Not available");
+    }
   }
   
 }

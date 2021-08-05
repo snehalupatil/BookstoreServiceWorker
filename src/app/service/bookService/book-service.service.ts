@@ -2,6 +2,7 @@ import { HttpServiceService } from './../httpService/http-service.service';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,6 @@ export class BookServiceService {
   getRefreshedData(){
     return this.refresh;
   }
-
   constructor( private httpService: HttpServiceService ) { }
 
   url = environment.baseUrl
@@ -24,18 +24,35 @@ export class BookServiceService {
 
   addCart=(data:any, token:any)=>{
     // return this.httpService.post(`${this.url}bookstore_user/add_cart_item/{product_id}`,data, true)
-    console.log(data);
+    // console.log(data);
     return this.httpService.post(`${this.url}bookstore_user/add_cart_item/${data.id}`, { }, true,token)
+    .pipe(
+      tap(() => {
+        this.refresh.next();
+      })
+    );
   }
+
+ 
   
   getCartItems(token:any){
-    console.log(token)
-    return this.httpService.get(`${this.url}bookstore_user/get_cart_items`, true, token);
+    // console.log(token)
+    return this.httpService.get(`${this.url}bookstore_user/get_cart_items`, true, token)
+    .pipe(
+      tap(() => {
+        this.refresh.next();
+      })
+    );
   }
 
   removeCartItem(data:any, token:any){
     console.log("data in remove item",data._id);
     return this.httpService.delete(`${this.url}bookstore_user/remove_cart_item/${data._id}`, { }, true, token)
+    .pipe(
+      tap(() => {
+        this.refresh.next();
+      })
+    );
   }
 
   customerDetails(data:any, token:any){

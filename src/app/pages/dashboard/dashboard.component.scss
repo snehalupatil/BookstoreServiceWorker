@@ -25,32 +25,8 @@
   border: none;
 }
 
-@media (max-width: 1300px) {
-  .totalitems {
-    display: none;
-  }
-
-  .sortby {
-    margin-right: 205px;
-  }
-}
-
 @media (max-width: 420px) {
   .main {
-    margin: 0px 150px 0px 60px;
-  }
-
-  .sub-header {
-    width: 72.6%;
-    min-width: 30%;
-    margin-left: 90px;
-  }
-
-  .totalitems {
-    display: none;
-  }
-
-  .sortby {
-    margin-right: 50px;
+    margin: 0px 150px 0px 30px;
   }
 }

@@ -18,7 +18,7 @@ export class HttpServiceService {
   }
 
   get(url: string, isHeaderRequired: any = false, token: any = null) {
-    console.log( "Data");
+    // console.log( "Data");
     let tokenOption = {headers: new HttpHeaders({"x-access-token": token})};
     return this.httpClient.get(url, isHeaderRequired && tokenOption)
   }

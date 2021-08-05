@@ -111,11 +111,15 @@
 
 @media (max-width: 420px) {
   .booklogo {
-    margin-left: 80px;
+    margin-left: 40px;
   }
 
   .search {
-    display: none;
+    margin-left: -4px;
+  }
+  .searchInput {
+    margin-left: 1px;
+    width: 1px;
   }
 
   .bookname {
@@ -123,10 +127,10 @@
   }
 
   .header_right_profile {
-    margin-left: 20px;
+    margin-left: 35px;
   }
 
   .header_right_cart {
-    margin-left: 3.5%;
+    margin-left: 4.5%;
   }
 }
