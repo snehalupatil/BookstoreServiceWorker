@@ -232,7 +232,7 @@
     text-align: initial;
   }
   .address-field {
-    width: 320px;
+    width: 300px;
   }
 
   .textName {
@@ -240,10 +240,14 @@
   }
 
   .radiotype {
+    display: flex;
+    flex-direction: row;
     margin-left: -5px;
   }
 
   .mat-radio {
+    display: flex;
+    flex-direction: row;
     margin-left: 10px;
   }
 
