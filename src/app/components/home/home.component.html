@@ -3,17 +3,17 @@
     <h3 style="font-weight: bold">Books</h3>
     <h5 style="margin-left: -780px">({{ totalItems }} items)</h5>
 
-    <select class="sortby" style="font-weight: bold" (change)="sortBy(value)">
-      <option value="ASC">Sort by relevance</option>
+    <select class="sortby" style="font-weight: bold" (change)="sortBy($event)">
+      <option>Sort by relevance</option>
       <option value="DSC">Price: High to Low</option>
       <option value="ASC">Price: Low to High</option>
-      <option value="DSC">Newest Arrival</option>
+      <option value="REV">Newest Arrival</option>
     </select>
   </div>
   <ng-container
     *ngFor="
       let book of books
-        | search: bookName
+        | search: searchBookName
         | paginate: { itemsPerPage: 8, currentPage: p }
     "
   >

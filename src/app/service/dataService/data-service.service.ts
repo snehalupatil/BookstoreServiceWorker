@@ -9,31 +9,22 @@ export class DataServiceService {
 
   constructor() { }
 
-  // private search = new BehaviorSubject(String);
-  // currentsearch = this.search.asObservable();
+  private search = new BehaviorSubject(String);
+  currentMessage = this.search.asObservable();
 
- 
-
-  // changeSearch(bookName: any){
-  //   console.log(bookName);
-  //   this.search.next(bookName)
-  // }
-
-
-// public editDataDetails: any = [];
-// public subject = new Subject<any>();
-// private messageSource = new  BehaviorSubject(this.editDataDetails);
-
-// currentMessage = this.messageSource.asObservable();
-
-// changeMessage(message: string) {
-// this.messageSource.next(message)
-// }
-
-currentMessage  = new Subject<any>();
-
-changeMessage(data: any) {
-    this.currentMessage.next(data);
+  changeMessage(bookName: any){
+    console.log(bookName);
+    this.search.next(bookName)
   }
+
+
+  private isAdded = new BehaviorSubject([]);
+  currentCart = this.isAdded.asObservable();
+
+  changeCart(isAdd: any){
+    console.log(isAdd);
+    this.isAdded.next(isAdd)
+  }
+
 
 }

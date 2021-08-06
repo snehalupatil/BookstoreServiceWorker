@@ -22,8 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartItems();
-    // this.bookService.getRefreshedData().subscribe((data:any) =>this.getCartItems());
-    
+    this.bookService.getRefreshedData().subscribe((data:any) =>this.getCartItems());  
   }
 
   getCartItems(){
@@ -31,14 +30,14 @@ export class HeaderComponent implements OnInit {
       this.carts = data.result;
       // console.log(this.carts);
       this.count= this.carts.length;
-      this.dataService.changeMessage(this.carts)
+      // this.dataService.changeCart(this.carts);
 
     },(error)=>{
       console.log(error)
     })
   }
 
-  setSearch=(event:any) : void =>{
+  setSearch=(event:any) =>{
     this.bookName=event.target.value
     console.log(this.bookName)
     this.dataService.changeMessage(this.bookName)
@@ -56,9 +55,6 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login']);
   }
-
-  
-
   
 }
 

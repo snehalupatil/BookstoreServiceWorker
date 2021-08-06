@@ -9,7 +9,7 @@
         type="text"
         placeholder="Search"
         [(ngModel)]="bookName"
-        (input)="setSearch($event)"
+        (keyup)="setSearch($event)"
       />
     </div>
     <div class="header_right_profile">

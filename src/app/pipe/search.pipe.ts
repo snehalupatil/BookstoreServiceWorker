@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string): any[] {
+  transform(items: any[], searchText: String): any[] {
    
     if (!items) {
       return [];
@@ -14,8 +14,8 @@ export class SearchPipe implements PipeTransform {
       return items;
     }
     
-    searchText = searchText.toLocaleLowerCase();
-
+    // searchText = searchText.toLocaleLowerCase();
+    // console.log(searchText)
     return items.filter(it => {
       return it.bookName.toLocaleLowerCase().includes(searchText);
     });
