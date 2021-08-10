@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
    
     this.getBooks();
 
-    this.bookService.getRefreshedData().subscribe(() => this.addtoCart(this.cart));
+    // this.bookService.getRefreshedData().subscribe(() => this.addtoCart(this.cart));
 
     this.dataService.currentMessage.subscribe((res2:any) => {
       console.log(res2);
@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit {
   }
 
   addtoCart(cart: any){
-    console.log(cart)
+    
     let data = {
     "id": cart._id,
     "token": this.token_Id

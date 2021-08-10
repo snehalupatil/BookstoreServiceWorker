@@ -7,8 +7,10 @@ export class SearchPipe implements PipeTransform {
 
   transform(items: any[], searchText: any): any[] {
    
+    console.log(items)
+
     if (!items) {
-      return [];
+      return items;
     }
     if (!searchText) {
       return items;
@@ -17,7 +19,7 @@ export class SearchPipe implements PipeTransform {
     // searchText = searchText.toLocaleLowerCase();
     // console.log(searchText)
     return items.filter(it => {
-      return it.bookName.toLowerCase().includes(searchText.toLowerCase());
+      return it.bookName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase());
     });
   }
 }
