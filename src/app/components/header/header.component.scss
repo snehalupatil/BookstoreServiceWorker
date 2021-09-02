@@ -110,6 +110,32 @@
   }
 }
 
+@media (max-width: 768px) {
+  .booklogo {
+    margin-left: 120px;
+  }
+
+  .search {
+    margin-left: -5px;
+  }
+  .searchInput {
+    margin-left: -2px;
+    width: 155px;
+  }
+
+  .bookname {
+    padding: 18px 50px 0px 6px;
+  }
+
+  .header_right_profile {
+    margin-left: 95px;
+  }
+
+  .header_right_cart {
+    margin-left: 3.5%;
+  }
+}
+
 @media (max-width: 420px) {
   .booklogo {
     margin-left: 35px;

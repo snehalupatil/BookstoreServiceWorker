@@ -185,6 +185,44 @@ ngb-rating {
   }
 }
 
+@media (max-width: 768px) {
+  .main {
+    margin: 0px 283px 0px 250px;
+  }
+
+  .book_title {
+    padding: 400px 0px 0px 0px;
+    margin: 10px 10px 10px -220px;
+  }
+
+  .largebook {
+    padding: 10px 20px 10px 20px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .details {
+    width: 200px;
+  }
+
+  .button {
+    margin-left: 271px;
+  }
+
+  .review {
+    padding: 10px 1px 5px 10px;
+  }
+
+  .button {
+    margin-left: 120px;
+  }
+
+  .footer {
+    margin-left: 0px;
+    min-width: 10%;
+  }
+}
+
 @media (max-width: 420px) {
   .main {
     margin: 0px 283px 0px 33px;

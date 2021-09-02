@@ -205,6 +205,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .route {
+    margin-left: 70px;
+  }
+  .newAdress {
+    display: none;
+  }
+}
+
 @media (max-width: 420px) {
   .mat-expansion-panel {
     margin-top: 10px;

@@ -196,6 +196,20 @@ div.description:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .totalitems {
+    display: none;
+  }
+
+  .sub-header {
+    margin-left: 5px;
+  }
+
+  .sortby {
+    margin-right: 80px;
+  }
+}
+
 @media (max-width: 420px) {
   .sub-header {
     width: 105.6%;

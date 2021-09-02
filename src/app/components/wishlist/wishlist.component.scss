@@ -43,6 +43,20 @@
   margin-top: 35px;
 }
 
+@media (max-width: 768px) {
+  .main {
+    margin: 10px 10px 10px -230px;
+  }
+
+  .cart {
+    padding: 0px 10px 0px 300px;
+  }
+
+  .remove {
+    margin-right: 25px;
+  }
+}
+
 @media (max-width: 420px) {
   .main {
     margin: 10px 10px 10px -230px;
